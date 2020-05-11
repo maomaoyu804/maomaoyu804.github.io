@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="这篇博客记录了毛毛雨的阿里云服务器搭建过程级一些坑qaq。。。目前实现功能：2020.5.11 目前是一台净版ubuntu 18.04，什么都没得">
+  <meta name="description" content="一个简单的极角排序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="阿里云服务器搭建过程">
-<meta property="og:url" content="http://maomaoyu804.github.io/2020/05/11/云服务器搭建过程/index.html">
+<meta property="og:title" content="[计算几何]cf598C Nearest vectors">
+<meta property="og:url" content="http://maomaoyu804.github.io/2020/05/11/算几何-cf/index.html">
 <meta property="og:site_name" content="mmy">
-<meta property="og:description" content="这篇博客记录了毛毛雨的阿里云服务器搭建过程级一些坑qaq。。。目前实现功能：2020.5.11 目前是一台净版ubuntu 18.04，什么都没得">
+<meta property="og:description" content="一个简单的极角排序">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-11T07:09:32.616Z">
+<meta property="og:updated_time" content="2020-05-11T08:11:02.752Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿里云服务器搭建过程">
-<meta name="twitter:description" content="这篇博客记录了毛毛雨的阿里云服务器搭建过程级一些坑qaq。。。目前实现功能：2020.5.11 目前是一台净版ubuntu 18.04，什么都没得">
-  <link rel="canonical" href="http://maomaoyu804.github.io/2020/05/11/云服务器搭建过程/">
+<meta name="twitter:title" content="[计算几何]cf598C Nearest vectors">
+<meta name="twitter:description" content="一个简单的极角排序">
+  <link rel="canonical" href="http://maomaoyu804.github.io/2020/05/11/算几何-cf/">
 
 
 <script id="page-configurations">
@@ -80,7 +80,7 @@
   };
 </script>
 
-  <title>阿里云服务器搭建过程 | mmy</title>
+  <title>[计算几何]cf598C Nearest vectors | mmy</title>
   
 
 
@@ -197,7 +197,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2020/05/11/云服务器搭建过程/">
+    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2020/05/11/算几何-cf/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="毛毛雨 =)">
@@ -211,7 +211,7 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">阿里云服务器搭建过程
+          <h1 class="post-title" itemprop="name headline">[计算几何]cf598C Nearest vectors
 
             
           </h1>
@@ -228,7 +228,7 @@
                 
               
 
-              <time title="创建时间：2020-05-11 15:04:54 / 修改时间：15:09:32" itemprop="dateCreated datePublished" datetime="2020-05-11T15:04:54+08:00">2020-05-11</time>
+              <time title="创建时间：2020-05-11 15:57:14 / 修改时间：16:11:02" itemprop="dateCreated datePublished" datetime="2020-05-11T15:57:14+08:00">2020-05-11</time>
             </span>
           
             
@@ -247,8 +247,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>这篇博客记录了毛毛雨的阿里云服务器搭建过程级一些坑qaq。。。<br>目前实现功能：<br>2020.5.11 目前是一台净版ubuntu 18.04，什么都没得</p>
+        <p>一个<del>简单的</del>极角排序</p>
 <a id="more"></a>
+<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>给n个从原点出发的向量，求夹角最小的两个向量<br>数据范围：2 ≤ n ≤ 100 000，|x|,|y| ≤ 10 000, x_2 + y_2 &gt; 0<br><a href="https://codeforces.com/contest/598/problem/C" target="_blank" rel="noopener">我是题目链接</a></p>
+<h1 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h1><p>input<br>4<br>-1 0<br>0 -1<br>1 0<br>1 1  </p>
+<p>output<br>3 4  </p>
+<p>input<br>6<br>-1 0<br>0 -1<br>1 0<br>1 1<br>-4 -5<br>-4 -6  </p>
+<p>output<br>6 5  </p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>他就是个很简单的极角排序，奈何写不出来。。。<br>看过大佬的题解后恍然大悟<br>我太菜了<br>代码如下</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">100005</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">long</span> <span class="keyword">double</span> pi=<span class="built_in">acos</span>(<span class="number">-1</span>);</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x,y,id;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">double</span> deg;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node &amp;a,<span class="keyword">const</span> node &amp;b)&#123;</span><br><span class="line">        <span class="keyword">return</span> a.deg&lt;b.deg;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;p[maxn];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">double</span> <span class="title">atann</span><span class="params">(<span class="keyword">int</span> y,<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">double</span> t=<span class="built_in">atan2</span>(y,x);</span><br><span class="line">    <span class="keyword">if</span>(t&lt;<span class="number">0</span>) t+=pi*<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;p[i].x,&amp;p[i].y);</span><br><span class="line">        p[i].deg=atann(p[i].y,p[i].x);</span><br><span class="line">        p[i].id=i;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(p+<span class="number">1</span>,p+n+<span class="number">1</span>);</span><br><span class="line">    p[<span class="number">0</span>].deg=p[n].deg-pi*<span class="number">2</span>;</span><br><span class="line">    p[<span class="number">0</span>].id=p[n].id;</span><br><span class="line">    <span class="keyword">int</span> qwq;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">double</span> ans=<span class="number">4</span>*pi;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p[i].deg-p[i<span class="number">-1</span>].deg&lt;ans)&#123;</span><br><span class="line">            ans=p[i].deg-p[i<span class="number">-1</span>].deg;</span><br><span class="line">            qwq=i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,p[qwq].id,p[qwq<span class="number">-1</span>].id);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -268,8 +275,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2020/05/10/ilibili乱搞-LeNet原理及实现/" rel="next" title="[bilibili乱搞]LeNet原理及实现">
-                  <i class="fa fa-chevron-left"></i> [bilibili乱搞]LeNet原理及实现
+                <a href="/2020/05/11/云服务器搭建过程/" rel="next" title="阿里云服务器搭建过程">
+                  <i class="fa fa-chevron-left"></i> 阿里云服务器搭建过程
                 </a>
               
             </div>
@@ -277,10 +284,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2020/05/11/算几何-cf/" rel="prev" title="[计算几何]cf598C Nearest vectors">
-                  [计算几何]cf598C Nearest vectors <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -312,8 +315,17 @@
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -339,6 +351,23 @@
 
         </div>
       </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题意"><span class="nav-number">1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例"><span class="nav-number">2.</span> <span class="nav-text">样例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">3.</span> <span class="nav-text">题解</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
     </div>
   </aside>
