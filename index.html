@@ -195,7 +195,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2019/08/27/主席树：可持久化线段树/">
+    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2020/05/11/云服务器搭建过程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="毛毛雨 =)">
@@ -211,7 +211,7 @@
         
           <h1 class="post-title" itemprop="name headline">
               
-              <a href="/2019/08/27/主席树：可持久化线段树/" class="post-title-link" itemprop="url">主席树：可持久化线段树</a>
+              <a href="/2020/05/11/云服务器搭建过程/" class="post-title-link" itemprop="url">阿里云服务器搭建过程</a>
             
           </h1>
         
@@ -227,19 +227,11 @@
                 
               
 
-              <time title="创建时间：2019-08-27 19:27:27" itemprop="dateCreated datePublished" datetime="2019-08-27T19:27:27+08:00">2019-08-27</time>
+              <time title="创建时间：2020-05-11 15:04:54 / 修改时间：15:09:32" itemprop="dateCreated datePublished" datetime="2020-05-11T15:04:54+08:00">2020-05-11</time>
             </span>
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-29 00:03:49" itemprop="dateModified" datetime="2019-09-29T00:03:49+08:00">2019-09-29</time>
-              </span>
             
           
 
@@ -254,11 +246,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="前置技能"><a href="#前置技能" class="headerlink" title="前置技能"></a>前置技能</h1><h2 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h2><p>此坑待填</p><h2 id="权值线段树"><a href="#权值线段树" class="headerlink" title="权值线段树"></a>权值线段树</h2><p>权值线段树的每个节点用来维护在[l,r]区间内数的个数，通常用来求k大值，时间复杂度为log n。<br>比如对于长度为10的数组[1,1,2,3,3,4,4,4,4,5]，我们可以构造权值线段树如下。<br><img src="https://img-blog.csdn.net/20180525013735994?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1N0dXBpZF9UdXJ0bGU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt><br>具体操作同普通的线段树qwq……  </p><h2 id="下面是主席树"><a href="#下面是主席树" class="headerlink" title="下面是主席树"></a>下面是主席树</h2><p>主席树是一种可持久化线段树，对于每次操作，可以保留历史版本，便于查询，是一棵权值线段树每次复制一条链得到。<br>比如对于最经典的求区间k大值问题：<br>对于长度为10的数组a，如果我们只用权值线段树的话，那么为了求[l,r]区间的k大值，我们需要建立10棵权值线段树，分别用Ti记录插入a[i]后的权值线段树。<br>但是这样会浪费掉很大空间，因为每插入一个a[i]，只会有一条链的值发生变化，所以我们可以只建立一棵权值线段树，然后每插入一个a[i]，就复制需要改变的那一条链，将它与剩余节点相连，假装是一棵新建的树……<br><img src="https://img-blog.csdn.net/20180414073603794?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5ODA5NjY0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt><br>如图，黄色的圈就是插入一个值的时候，将对应的链复制过来并修改，假装是一棵新的树Ti。<br>以此类推，如果数组有n个节点的话，这样下来就会保留n个版本，也就是n棵假装的树。<br>每次查询[l,r]区间的k大值，就可以递归找使Tl和Tr两棵树的节点个数差为k的区间。<br>头疼的一批，顶不住了，不如上板子。<br>（板子并不是k大值<br>（注意update函数中的&amp;  </p>
+          <p>这篇博客记录了毛毛雨的阿里云服务器搭建过程级一些坑qaq。。。<br>目前实现功能：<br>2020.5.11 目前是一台净版ubuntu 18.04，什么都没得</p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/08/27/主席树：可持久化线段树/#more" rel="contents">
+              <a class="btn" href="/2020/05/11/云服务器搭建过程/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -289,7 +281,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2019/08/23/hdu6709-Fishing-Master/">
+    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2020/05/10/ilibili乱搞-LeNet原理及实现/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="毛毛雨 =)">
@@ -305,7 +297,7 @@
         
           <h1 class="post-title" itemprop="name headline">
               
-              <a href="/2019/08/23/hdu6709-Fishing-Master/" class="post-title-link" itemprop="url">hdu6709 Fishing Master</a>
+              <a href="/2020/05/10/ilibili乱搞-LeNet原理及实现/" class="post-title-link" itemprop="url">[bilibili乱搞]LeNet原理及实现</a>
             
           </h1>
         
@@ -321,11 +313,19 @@
                 
               
 
-              <time title="创建时间：2019-08-23 19:05:18 / 修改时间：20:03:03" itemprop="dateCreated datePublished" datetime="2019-08-23T19:05:18+08:00">2019-08-23</time>
+              <time title="创建时间：2020-05-10 22:34:07" itemprop="dateCreated datePublished" datetime="2020-05-10T22:34:07+08:00">2020-05-10</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-11 01:01:31" itemprop="dateModified" datetime="2020-05-11T01:01:31+08:00">2020-05-11</time>
+              </span>
             
           
 
@@ -340,11 +340,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>可能对于这类题，有画图说明一下理解起来会比较方便吧，但是鉴于毛毛雨太菜……<br>咳咳，不如手动画啦！  </p><h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h1><p>一个人要钓k条鱼，钓每条鱼的时间为k，钓完后要把鱼炖好，炖第i条鱼的时间为ti。要求每次只能炖一条鱼，并且钓鱼期间不能做其他事情，且中途不能停止。问炖好所有鱼最短时间。<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6709" target="_blank" rel="noopener">题目传送门</a>  </p><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>由于钓鱼期间不能做其他事情，所以钓鱼过程中可能会有时间浪费掉（即人在钓鱼，但是锅里的鱼已经炖好了），我们求最短时间的话，要尽可能让每段炖鱼时间挨在一起，如果不能的话，也要让炖鱼的总间隔时间最短，每次炖鱼的时间内可以钓上来的鱼为k/ti，那么不花费额外时间能钓上来的总鱼数cnt即为k/ti的和，由于一定要先钓上来一条鱼才可以开始炖，所以实际上需要考虑的鱼只有n-1条，用ans记录总时间。 </p>
+          <p>就是LeNet嘛qwq<br>pytorch官网教程那个！！<br>内容包含：</p>
+<ul>
+<li>LeNet模型及实现</li>
+<li>用数据集进行验证</li>
+<li>用代码下载数据集太慢的解决办法  </li>
+</ul>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/08/23/hdu6709-Fishing-Master/#more" rel="contents">
+              <a class="btn" href="/2020/05/10/ilibili乱搞-LeNet原理及实现/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -375,7 +380,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2019/08/21/hdu6695/">
+    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2020/04/28/还要有一篇模板总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="毛毛雨 =)">
@@ -391,7 +396,7 @@
         
           <h1 class="post-title" itemprop="name headline">
               
-              <a href="/2019/08/21/hdu6695/" class="post-title-link" itemprop="url">hdu6695</a>
+              <a href="/2020/04/28/还要有一篇模板总结/" class="post-title-link" itemprop="url">毛毛雨的板子们</a>
             
           </h1>
         
@@ -407,19 +412,11 @@
                 
               
 
-              <time title="创建时间：2019-08-21 22:40:34" itemprop="dateCreated datePublished" datetime="2019-08-21T22:40:34+08:00">2019-08-21</time>
+              <time title="创建时间：2020-04-28 21:32:18 / 修改时间：23:06:36" itemprop="dateCreated datePublished" datetime="2020-04-28T21:32:18+08:00">2020-04-28</time>
             </span>
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-29 00:04:03" itemprop="dateModified" datetime="2019-09-29T00:04:03+08:00">2019-09-29</time>
-              </span>
             
           
 
@@ -434,189 +431,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
-            <p>先挖坑  </p>
-<p>这道题主要是应用set和map吧……<br>然后和队友wa到自闭<br>对着数据跑的时候发现是一些边界条件考虑的不清楚  </p>
-<p>不如先贴代码啦！（附文件读入  </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> f,s;</span><br><span class="line">&#125;a[<span class="number">100100</span>];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp1</span><span class="params">(node x,node y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x.f==y.f) <span class="keyword">return</span> x.s&gt;y.s;</span><br><span class="line">    <span class="keyword">return</span> x.f&gt;y.f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> m[<span class="number">100100</span>];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="built_in">set</span> &lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt; q;</span><br><span class="line"><span class="built_in">set</span> &lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt;::iterator it1;</span><br><span class="line"><span class="built_in">map</span> &lt;<span class="keyword">long</span> <span class="keyword">long</span>,<span class="keyword">int</span>&gt; mp;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="comment">//freopen("in.txt","r",stdin); //输入重定向，输入数据将从in.txt文件中读取</span></span><br><span class="line">    <span class="comment">//freopen("data.txt","w",stdout);</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</span><br><span class="line">    <span class="keyword">while</span> (T--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> tt=<span class="number">1</span>;tt&lt;=n;tt++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>,&amp;a[tt].f,&amp;a[tt].s);</span><br><span class="line">            mp[a[tt].s]++;</span><br><span class="line">            q.insert(a[tt].s);</span><br><span class="line">        &#125;</span><br><span class="line">        sort(a+<span class="number">1</span>,a+<span class="number">1</span>+n,cmp1);</span><br><span class="line">        m[<span class="number">1</span>]=a[<span class="number">1</span>].s;</span><br><span class="line">        m[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            m[i]=max(m[i<span class="number">-1</span>],a[i].s);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">1e18</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            mp[a[i].s]--;</span><br><span class="line">            <span class="keyword">if</span> (mp[a[i].s]==<span class="number">0</span>) q.erase(a[i].s);</span><br><span class="line">            <span class="keyword">long</span> <span class="keyword">long</span> maxx=a[i].f;</span><br><span class="line">            it1=q.lower_bound(maxx);</span><br><span class="line">            <span class="keyword">long</span> <span class="keyword">long</span> temp=m[i<span class="number">-1</span>];</span><br><span class="line">            <span class="keyword">if</span>(it1!=q.end())&#123;</span><br><span class="line">                <span class="keyword">if</span>(i!=<span class="number">1</span>)ans=min(ans,<span class="built_in">abs</span>(a[i].f-temp));</span><br><span class="line">                <span class="keyword">if</span>((*it1)&gt;=temp) ans=min(ans,<span class="built_in">abs</span>(a[i].f-(*it1)));</span><br><span class="line">                <span class="keyword">if</span>(it1!=q.begin()&amp;&amp;(*(--it1)&gt;temp)) &#123;</span><br><span class="line">                    ans=min(ans,<span class="built_in">abs</span>(a[i].f-(*it1)));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                ans=min(ans,<span class="built_in">abs</span>(a[i].f-temp));</span><br><span class="line">                <span class="keyword">if</span>(*(--it1)&gt;temp) ans=min(ans,<span class="built_in">abs</span>(a[i].f-*it1));</span><br><span class="line">            &#125;</span><br><span class="line">            mp[a[i].s]++;</span><br><span class="line">            q.insert(a[i].s);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">        mp.clear();</span><br><span class="line">        q.clear();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//fclose(stdin);</span></span><br><span class="line">    <span class="comment">//fclose(stdout);</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2019/08/15/关于安全/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="毛毛雨 =)">
-      <meta itemprop="description" content="并不是程序媛/辣鸡毛毛雨">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mmy">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2019/08/15/关于安全/" class="post-title-link" itemprop="url">关于安全</a>
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-08-15 14:24:45" itemprop="dateCreated datePublished" datetime="2019-08-15T14:24:45+08:00">2019-08-15</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-29 00:04:13" itemprop="dateModified" datetime="2019-09-29T00:04:13+08:00">2019-09-29</time>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <p>鉴于对安全方向暂时还没有什么系统的了解，所以这篇博客就是随手记一下零零碎碎的知识啦!<br><img src="https://pic2.zhimg.com/80/a5e4229c8bfe9ae282b4db8add8ed09b_hd.jpg" alt></p>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2019/08/14/树链剖分-洛谷P3384模板题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="毛毛雨 =)">
-      <meta itemprop="description" content="并不是程序媛/辣鸡毛毛雨">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mmy">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2019/08/14/树链剖分-洛谷P3384模板题/" class="post-title-link" itemprop="url">树链剖分 洛谷P3384模板题</a>
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-08-14 10:30:23" itemprop="dateCreated datePublished" datetime="2019-08-14T10:30:23+08:00">2019-08-14</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-15 09:51:47" itemprop="dateModified" datetime="2019-08-15T09:51:47+08:00">2019-08-15</time>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="这里是树链剖分"><a href="#这里是树链剖分" class="headerlink" title="这里是树链剖分"></a>这里是树链剖分</h1><p>小菜鸡在长时间划水之后终于似乎看懂了树链剖分(⁄ ⁄•⁄ω⁄•⁄ ⁄)<br>部分转自 <a href="https://www.cnblogs.com/ivanovcraft/p/9019090.html" target="_blank" rel="noopener">ivanovcraft带师</a> 和 <a href="https://baike.baidu.com/item/树链剖分/10524122?fr=aladdin" target="_blank" rel="noopener">百度百科</a>。</p><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>（悄悄说）之前看了好多好多博客，大概只是知道树链剖分的实现，但并不了解树链剖分存在的意义……<br>（继续悄悄说）所以毛毛雨去查了一下百度百科(⁄ ⁄•⁄ω⁄•⁄ ⁄)，感觉百度百科简直是良心定义！！  </p>
+          <p>这是一篇模板的整理<br>慢慢积累吧qwq<br>窝可以的！！  </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/08/14/树链剖分-洛谷P3384模板题/#more" rel="contents">
+              <a class="btn" href="/2020/04/28/还要有一篇模板总结/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -647,7 +466,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2019/08/08/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2020/04/28/-bzoj3884-上帝与集合的正确用法-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="毛毛雨 =)">
@@ -663,7 +482,7 @@
         
           <h1 class="post-title" itemprop="name headline">
               
-              <a href="/2019/08/08/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+              <a href="/2020/04/28/-bzoj3884-上帝与集合的正确用法-1/" class="post-title-link" itemprop="url">[数论]bzoj3884 上帝与集合的正确用法</a>
             
           </h1>
         
@@ -679,8 +498,12 @@
                 
               
 
-              <time title="创建时间：2019-08-08 13:17:12" itemprop="dateCreated datePublished" datetime="2019-08-08T13:17:12+08:00">2019-08-08</time>
+              <time title="创建时间：2020-04-28 19:51:34 / 修改时间：21:06:58" itemprop="dateCreated datePublished" datetime="2020-04-28T19:51:34+08:00">2020-04-28</time>
             </span>
+          
+            
+
+            
           
 
           
@@ -694,11 +517,568 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+          <p>扩展欧拉定理</p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/08/08/hello-world/#more" rel="contents">
+              <a class="btn" href="/2020/04/28/-bzoj3884-上帝与集合的正确用法-1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2020/04/28/论-bzoj4173/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="毛毛雨 =)">
+      <meta itemprop="description" content="并不是程序媛/辣鸡毛毛雨">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mmy">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2020/04/28/论-bzoj4173/" class="post-title-link" itemprop="url">[数论]bzoj4173 数学</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2020-04-28 17:40:51 / 修改时间：21:07:09" itemprop="dateCreated datePublished" datetime="2020-04-28T17:40:51+08:00">2020-04-28</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>依旧是一道欧拉函数qwq<br>可以快乐打表<br>或者蜜汁推导orz…  </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/04/28/论-bzoj4173/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2020/04/27/-bzoj2818/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="毛毛雨 =)">
+      <meta itemprop="description" content="并不是程序媛/辣鸡毛毛雨">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mmy">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2020/04/27/-bzoj2818/" class="post-title-link" itemprop="url">[数论]bzoj2818 gcd</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2020-04-27 17:12:03" itemprop="dateCreated datePublished" datetime="2020-04-27T17:12:03+08:00">2020-04-27</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-28 21:04:28" itemprop="dateModified" datetime="2020-04-28T21:04:28+08:00">2020-04-28</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>bzoj2818<br>一道欧拉函数的题目qwq  </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/04/27/-bzoj2818/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2020/04/27/-noi2002robot/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="毛毛雨 =)">
+      <meta itemprop="description" content="并不是程序媛/辣鸡毛毛雨">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mmy">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2020/04/27/-noi2002robot/" class="post-title-link" itemprop="url">[数论]bzoj1408 robot</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2020-04-27 16:22:33" itemprop="dateCreated datePublished" datetime="2020-04-27T16:22:33+08:00">2020-04-27</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-28 21:05:02" itemprop="dateModified" datetime="2020-04-28T21:05:02+08:00">2020-04-28</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>bzoj1408<br>noi2002robot</p>
+<p>有些题看起来是道数论题目，实则是数论+dp+快速幂……<br>哭着离开……  </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/04/27/-noi2002robot/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2020/04/18/学习-概率及信息论/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="毛毛雨 =)">
+      <meta itemprop="description" content="并不是程序媛/辣鸡毛毛雨">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mmy">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2020/04/18/学习-概率及信息论/" class="post-title-link" itemprop="url">[深度学习]概率及信息论</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2020-04-18 23:18:42" itemprop="dateCreated datePublished" datetime="2020-04-18T23:18:42+08:00">2020-04-18</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-27 17:05:24" itemprop="dateModified" datetime="2020-04-27T17:05:24+08:00">2020-04-27</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>假装有摘要</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/04/18/学习-概率及信息论/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2020/04/18/日志/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="毛毛雨 =)">
+      <meta itemprop="description" content="并不是程序媛/辣鸡毛毛雨">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mmy">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2020/04/18/日志/" class="post-title-link" itemprop="url">更新日志</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2020-04-18 21:16:29" itemprop="dateCreated datePublished" datetime="2020-04-18T21:16:29+08:00">2020-04-18</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-28 21:29:54" itemprop="dateModified" datetime="2020-04-28T21:29:54+08:00">2020-04-28</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>这篇博客主要记录github的搭建过程，以及使用说明  </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/04/18/日志/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2020/04/15/深度学习-线性代数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="毛毛雨 =)">
+      <meta itemprop="description" content="并不是程序媛/辣鸡毛毛雨">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mmy">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2020/04/15/深度学习-线性代数/" class="post-title-link" itemprop="url">[深度学习]线性代数</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2020-04-15 22:27:00" itemprop="dateCreated datePublished" datetime="2020-04-15T22:27:00+08:00">2020-04-15</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-28 21:08:04" itemprop="dateModified" datetime="2020-04-28T21:08:04+08:00">2020-04-28</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>qwq</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/04/15/深度学习-线性代数/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -725,6 +1105,9 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
           </div>
@@ -759,7 +1142,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -781,7 +1164,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -858,6 +1241,82 @@
 
 
 
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', function() {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
   
 
   

@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="可能对于这类题，有画图说明一下理解起来会比较方便吧，但是鉴于毛毛雨太菜……咳咳，不如手动画啦！">
+  <meta name="description" content="这是一篇模板的整理慢慢积累吧qwq窝可以的！！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hdu6709 Fishing Master">
-<meta property="og:url" content="http://maomaoyu804.github.io/2019/08/23/hdu6709-Fishing-Master/index.html">
+<meta property="og:title" content="毛毛雨的板子们">
+<meta property="og:url" content="http://maomaoyu804.github.io/2020/04/28/还要有一篇模板总结/index.html">
 <meta property="og:site_name" content="mmy">
-<meta property="og:description" content="可能对于这类题，有画图说明一下理解起来会比较方便吧，但是鉴于毛毛雨太菜……咳咳，不如手动画啦！">
+<meta property="og:description" content="这是一篇模板的整理慢慢积累吧qwq窝可以的！！">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-28T13:08:16.039Z">
+<meta property="og:updated_time" content="2020-04-28T15:06:36.471Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hdu6709 Fishing Master">
-<meta name="twitter:description" content="可能对于这类题，有画图说明一下理解起来会比较方便吧，但是鉴于毛毛雨太菜……咳咳，不如手动画啦！">
-  <link rel="canonical" href="http://maomaoyu804.github.io/2019/08/23/hdu6709-Fishing-Master/">
+<meta name="twitter:title" content="毛毛雨的板子们">
+<meta name="twitter:description" content="这是一篇模板的整理慢慢积累吧qwq窝可以的！！">
+  <link rel="canonical" href="http://maomaoyu804.github.io/2020/04/28/还要有一篇模板总结/">
 
 
 <script id="page-configurations">
@@ -80,7 +80,7 @@
   };
 </script>
 
-  <title>hdu6709 Fishing Master | mmy</title>
+  <title>毛毛雨的板子们 | mmy</title>
   
 
 
@@ -197,7 +197,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2019/08/23/hdu6709-Fishing-Master/">
+    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2020/04/28/还要有一篇模板总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="毛毛雨 =)">
@@ -211,7 +211,7 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">hdu6709 Fishing Master
+          <h1 class="post-title" itemprop="name headline">毛毛雨的板子们
 
             
           </h1>
@@ -228,19 +228,11 @@
                 
               
 
-              <time title="创建时间：2019-08-23 19:05:18" itemprop="dateCreated datePublished" datetime="2019-08-23T19:05:18+08:00">2019-08-23</time>
+              <time title="创建时间：2020-04-28 21:32:18 / 修改时间：23:06:36" itemprop="dateCreated datePublished" datetime="2020-04-28T21:32:18+08:00">2020-04-28</time>
             </span>
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-28 21:08:16" itemprop="dateModified" datetime="2020-04-28T21:08:16+08:00">2020-04-28</time>
-              </span>
             
           
 
@@ -255,47 +247,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>可能对于这类题，有画图说明一下理解起来会比较方便吧，但是鉴于毛毛雨太菜……<br>咳咳，不如手动画啦！  </p>
+        <p>这是一篇模板的整理<br>慢慢积累吧qwq<br>窝可以的！！  </p>
 <a id="more"></a>
+<h1 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h1><h2 id="快速幂取模"><a href="#快速幂取模" class="headerlink" title="快速幂取模"></a>快速幂取模</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">qpow</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> mod)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b)&#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>) ans*=a,ans%=mod;</span><br><span class="line">        a*=a,a%=mod;</span><br><span class="line">        b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans%mod;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h1><p>一个人要钓k条鱼，钓每条鱼的时间为k，钓完后要把鱼炖好，炖第i条鱼的时间为ti。要求每次只能炖一条鱼，并且钓鱼期间不能做其他事情，且中途不能停止。问炖好所有鱼最短时间。<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6709" target="_blank" rel="noopener">题目传送门</a>  </p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>由于钓鱼期间不能做其他事情，所以钓鱼过程中可能会有时间浪费掉（即人在钓鱼，但是锅里的鱼已经炖好了），我们求最短时间的话，要尽可能让每段炖鱼时间挨在一起，如果不能的话，也要让炖鱼的总间隔时间最短，每次炖鱼的时间内可以钓上来的鱼为k/ti，那么不花费额外时间能钓上来的总鱼数cnt即为k/ti的和，由于一定要先钓上来一条鱼才可以开始炖，所以实际上需要考虑的鱼只有n-1条，用ans记录总时间。 </p>
-<ul>
-<li>先来考虑最好的情况，不需要花费额外时间，即cnt&gt;=n-1。这种情况意味着每次炖鱼时，都会有源源不断的鱼来补充，不需要再额外花时间去钓鱼， 此时ans为炖鱼总时间。</li>
-<li>如果有钓鱼时间长于炖鱼时间，则炖上一条鱼时不一定恰好可以钓上来鱼，则需要花费额外时间来钓鱼，此时即为炖鱼的间隔时间，需要花费额外时间补的鱼的数量为n-1-cnt。</li>
-<li>用a数组记录多补一次鱼时需要浪费的时间，a[i]=k-k%ti。为了使浪费时间最短，将a数组从小到大排序，取前n-1-cnt个即可。</li>
-<li>总时间即为炖鱼的时间加上浪费掉的时间。  </li>
-</ul>
-<h1 id="快乐代码"><a href="#快乐代码" class="headerlink" title="快乐代码"></a>快乐代码</h1><pre><code class="cpp"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span>
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-<span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;
-ll a[<span class="number">100005</span>];
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>
-<span class="function"></span>{
-    ll t;<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;t);
-    <span class="keyword">while</span>(t--){
-        ll n,k;
-        <span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>,&amp;n,&amp;k);
-        ll ans=k,cnt=<span class="number">0</span>;
-        <span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;n;i++){
-            ll tim;<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;tim);
-            ans+=tim;
-            cnt+=tim/k;
-            a[i]=k-tim%k;
-        }
-        sort(a,a+n);
-        <span class="keyword">if</span>(cnt&gt;=n<span class="number">-1</span>) <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;
-        <span class="keyword">else</span>{
-            ll len=n-cnt<span class="number">-1</span>;
-            <span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;len;i++){
-                ans+=a[i];
-            }
-            <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;
-        }
-    }
-    <span class="keyword">return</span> <span class="number">0</span>;
-}</code></pre>
-<h1 id="一个奇怪的问题"><a href="#一个奇怪的问题" class="headerlink" title="一个奇怪的问题"></a>一个奇怪的问题</h1><p>钓鱼钓了一下午，是因为比赛时候觉得，如果刚刚好钓n条鱼上来的话，会出现钓到某时间鱼不够，而到另一时间鱼突然多了的情况，吃完饭回来问了一下大佬，发现并不会存在这种问题。实际上，在预先知道在炖哪条鱼时要额外花时间钓鱼的话，我们就可以通过调整钓鱼的顺序来保证鱼一直是充足的。甚至可以把所有要多钓的鱼放在最前面钓好。</p>
+<h2 id="判断素数"><a href="#判断素数" class="headerlink" title="判断素数"></a>判断素数</h2><p>暴力判断 复杂度$O(\sqrt n)$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Prime</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i*i&lt;=x;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(x%i==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>欧拉筛 复杂度$O(n)$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> isPrime[n];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; prime;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Prime</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(isPrime[i]) prime.push_back(i);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;prime.size();j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i*prime[j]&gt;n) <span class="keyword">break</span>;</span><br><span class="line">            isPrime[i*prime[j]]=<span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span>(i%prime[j]==<span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><p>暴力求 复杂度$O(\sqrt(n))$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">phi</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret=x;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i*i&lt;=x;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(x%i==<span class="number">0</span>) ret-=ret/i;</span><br><span class="line">        <span class="keyword">while</span>(x%i==<span class="number">0</span>) x/=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;<span class="number">1</span>) ret-=ret/x;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>线性筛 复杂度$O(n)$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Euler</span><span class="params">()</span></span>&#123;     </span><br><span class="line">     phi[<span class="number">1</span>]=<span class="number">1</span>;    </span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;MAXN;i++) phi[i]=i;  </span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;MAXN;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(phi[i]==i)    </span><br><span class="line">           <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;MAXN;j+=i) phi[j]-=phi[j]/i;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -316,8 +283,8 @@ ll a[<span class="number">100005</span>];
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/08/21/hdu6695/" rel="next" title="hdu6695">
-                  <i class="fa fa-chevron-left"></i> hdu6695
+                <a href="/2020/04/28/-bzoj3884-上帝与集合的正确用法-1/" rel="next" title="[数论]bzoj3884 上帝与集合的正确用法">
+                  <i class="fa fa-chevron-left"></i> [数论]bzoj3884 上帝与集合的正确用法
                 </a>
               
             </div>
@@ -326,8 +293,8 @@ ll a[<span class="number">100005</span>];
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/08/27/主席树：可持久化线段树/" rel="prev" title="主席树：可持久化线段树">
-                  主席树：可持久化线段树 <i class="fa fa-chevron-right"></i>
+                <a href="/2020/05/10/ilibili乱搞-LeNet原理及实现/" rel="prev" title="[bilibili乱搞]LeNet原理及实现">
+                  [bilibili乱搞]LeNet原理及实现 <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -406,7 +373,7 @@ ll a[<span class="number">100005</span>];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目大意"><span class="nav-number">1.</span> <span class="nav-text">题目大意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快乐代码"><span class="nav-number">3.</span> <span class="nav-text">快乐代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一个奇怪的问题"><span class="nav-number">4.</span> <span class="nav-text">一个奇怪的问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数论"><span class="nav-number">1.</span> <span class="nav-text">数论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#快速幂取模"><span class="nav-number">1.1.</span> <span class="nav-text">快速幂取模</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断素数"><span class="nav-number">1.2.</span> <span class="nav-text">判断素数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#欧拉函数"><span class="nav-number">1.3.</span> <span class="nav-text">欧拉函数</span></a></li></ol></li></ol></div>
             
 
           </div>

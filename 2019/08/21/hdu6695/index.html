@@ -55,17 +55,17 @@
   };
 </script>
 
-  <meta name="description" content="先挖坑   这道题主要是应用set和map吧……然后和队友wa到自闭对着数据跑的时候发现是一些边界条件考虑的不清楚   不如先贴代码啦！（附文件读入   12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061#include &amp;">
+  <meta name="description" content="先挖坑   这道题主要是应用set和map吧……然后和队友wa到自闭对着数据跑的时候发现是一些边界条件考虑的不清楚">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hdu6695">
 <meta property="og:url" content="http://maomaoyu804.github.io/2019/08/21/hdu6695/index.html">
 <meta property="og:site_name" content="mmy">
-<meta property="og:description" content="先挖坑   这道题主要是应用set和map吧……然后和队友wa到自闭对着数据跑的时候发现是一些边界条件考虑的不清楚   不如先贴代码啦！（附文件读入   12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061#include &amp;">
+<meta property="og:description" content="先挖坑   这道题主要是应用set和map吧……然后和队友wa到自闭对着数据跑的时候发现是一些边界条件考虑的不清楚">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-28T16:04:03.605Z">
+<meta property="og:updated_time" content="2020-04-28T13:08:30.401Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hdu6695">
-<meta name="twitter:description" content="先挖坑   这道题主要是应用set和map吧……然后和队友wa到自闭对着数据跑的时候发现是一些边界条件考虑的不清楚   不如先贴代码啦！（附文件读入   12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061#include &amp;">
+<meta name="twitter:description" content="先挖坑   这道题主要是应用set和map吧……然后和队友wa到自闭对着数据跑的时候发现是一些边界条件考虑的不清楚">
   <link rel="canonical" href="http://maomaoyu804.github.io/2019/08/21/hdu6695/">
 
 
@@ -239,7 +239,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-29 00:04:03" itemprop="dateModified" datetime="2019-09-29T00:04:03+08:00">2019-09-29</time>
+                <time title="修改时间：2020-04-28 21:08:30" itemprop="dateModified" datetime="2020-04-28T21:08:30+08:00">2020-04-28</time>
               </span>
             
           
@@ -257,6 +257,8 @@
       
         <p>先挖坑  </p>
 <p>这道题主要是应用set和map吧……<br>然后和队友wa到自闭<br>对着数据跑的时候发现是一些边界条件考虑的不清楚  </p>
+<a id="more"></a>
+
 <p>不如先贴代码啦！（附文件读入  </p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> f,s;</span><br><span class="line">&#125;a[<span class="number">100100</span>];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp1</span><span class="params">(node x,node y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x.f==y.f) <span class="keyword">return</span> x.s&gt;y.s;</span><br><span class="line">    <span class="keyword">return</span> x.f&gt;y.f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> m[<span class="number">100100</span>];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="built_in">set</span> &lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt; q;</span><br><span class="line"><span class="built_in">set</span> &lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt;::iterator it1;</span><br><span class="line"><span class="built_in">map</span> &lt;<span class="keyword">long</span> <span class="keyword">long</span>,<span class="keyword">int</span>&gt; mp;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="comment">//freopen("in.txt","r",stdin); //输入重定向，输入数据将从in.txt文件中读取</span></span><br><span class="line">    <span class="comment">//freopen("data.txt","w",stdout);</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</span><br><span class="line">    <span class="keyword">while</span> (T--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> tt=<span class="number">1</span>;tt&lt;=n;tt++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>,&amp;a[tt].f,&amp;a[tt].s);</span><br><span class="line">            mp[a[tt].s]++;</span><br><span class="line">            q.insert(a[tt].s);</span><br><span class="line">        &#125;</span><br><span class="line">        sort(a+<span class="number">1</span>,a+<span class="number">1</span>+n,cmp1);</span><br><span class="line">        m[<span class="number">1</span>]=a[<span class="number">1</span>].s;</span><br><span class="line">        m[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            m[i]=max(m[i<span class="number">-1</span>],a[i].s);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">1e18</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            mp[a[i].s]--;</span><br><span class="line">            <span class="keyword">if</span> (mp[a[i].s]==<span class="number">0</span>) q.erase(a[i].s);</span><br><span class="line">            <span class="keyword">long</span> <span class="keyword">long</span> maxx=a[i].f;</span><br><span class="line">            it1=q.lower_bound(maxx);</span><br><span class="line">            <span class="keyword">long</span> <span class="keyword">long</span> temp=m[i<span class="number">-1</span>];</span><br><span class="line">            <span class="keyword">if</span>(it1!=q.end())&#123;</span><br><span class="line">                <span class="keyword">if</span>(i!=<span class="number">1</span>)ans=min(ans,<span class="built_in">abs</span>(a[i].f-temp));</span><br><span class="line">                <span class="keyword">if</span>((*it1)&gt;=temp) ans=min(ans,<span class="built_in">abs</span>(a[i].f-(*it1)));</span><br><span class="line">                <span class="keyword">if</span>(it1!=q.begin()&amp;&amp;(*(--it1)&gt;temp)) &#123;</span><br><span class="line">                    ans=min(ans,<span class="built_in">abs</span>(a[i].f-(*it1)));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                ans=min(ans,<span class="built_in">abs</span>(a[i].f-temp));</span><br><span class="line">                <span class="keyword">if</span>(*(--it1)&gt;temp) ans=min(ans,<span class="built_in">abs</span>(a[i].f-*it1));</span><br><span class="line">            &#125;</span><br><span class="line">            mp[a[i].s]++;</span><br><span class="line">            q.insert(a[i].s);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">        mp.clear();</span><br><span class="line">        q.clear();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//fclose(stdin);</span></span><br><span class="line">    <span class="comment">//fclose(stdout);</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
@@ -278,8 +280,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/08/15/关于安全/" rel="next" title="关于安全">
-                  <i class="fa fa-chevron-left"></i> 关于安全
+                <a href="/2019/08/14/树链剖分-洛谷P3384模板题/" rel="next" title="树链剖分 洛谷P3384模板题">
+                  <i class="fa fa-chevron-left"></i> 树链剖分 洛谷P3384模板题
                 </a>
               
             </div>
@@ -338,7 +340,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -360,7 +362,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -436,6 +438,8 @@
 
 
 
+
+  
 
   
 
