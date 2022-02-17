@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="考完信息安全数学基础来填坑qwq主要内容：  残差网络结构 ResNet网络结构 BN详解 迁移学习概述  RetNet网络亮点：  超深的网络结构（突破1000层） 提出residual模块 使用Batch Normalization加速训练（丢弃dropout）  好热QAQ">
+<meta name="description" content="考完信息安全数学基础来填坑qwq主要内容：  残差网络结构 ResNet网络结构 BN详解 迁移学习概述    RetNet网络亮点：  超深的网络结构（突破1000层） 提出residual模块 使用Batch Normalization加速训练（丢弃dropout）    好热QAQ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[bilibili乱搞]ResNet">
 <meta property="og:url" content="http://maomaoyu804.github.io/2020/06/18/ilibili%E4%B9%B1%E6%90%9E-ResNet/index.html">
 <meta property="og:site_name" content="毛毛雨">
-<meta property="og:description" content="考完信息安全数学基础来填坑qwq主要内容：  残差网络结构 ResNet网络结构 BN详解 迁移学习概述  RetNet网络亮点：  超深的网络结构（突破1000层） 提出residual模块 使用Batch Normalization加速训练（丢弃dropout）  好热QAQ">
+<meta property="og:description" content="考完信息安全数学基础来填坑qwq主要内容：  残差网络结构 ResNet网络结构 BN详解 迁移学习概述    RetNet网络亮点：  超深的网络结构（突破1000层） 提出residual模块 使用Batch Normalization加速训练（丢弃dropout）    好热QAQ">
 <meta property="og:locale">
 <meta property="og:image" content="http://maomaoyu804.github.io/images/pasted-17.png">
 <meta property="og:image" content="http://maomaoyu804.github.io/images/pasted-18.png">
@@ -365,34 +365,33 @@
 <li>残差网络结构</li>
 <li>ResNet网络结构</li>
 <li>BN详解</li>
-<li>迁移学习概述</li>
+<li>迁移学习概述  </li>
 </ul>
 <p>RetNet网络亮点：</p>
 <ul>
 <li>超深的网络结构（突破1000层）</li>
 <li>提出residual模块</li>
-<li>使用Batch Normalization加速训练（丢弃dropout）</li>
+<li>使用Batch Normalization加速训练（丢弃dropout）  </li>
 </ul>
-<p>好热QAQ</p>
-<span id="more"></span>
+<p>好热QAQ<br><span id="more"></span></p>
 <h1 id="提出背景"><a href="#提出背景" class="headerlink" title="提出背景"></a>提出背景</h1><p><img src="/images/pasted-17.png" alt="upload successful"><br>从图中可以看出，更深的网络效果不一定好</p>
 <ul>
 <li>梯度消失或梯度爆炸问题<br>梯度消失：假设每层误差梯度小于1，则在反向传播过程中，每向前传播一次，都要乘一个小于1的数，随着网络的加深，这个数越接近于0.<br>梯度爆炸： 如果每层误差梯度大于1，则在反向传播过程中，每向前传播一次，都要乘一个大于1的数，随着网络的加深，这个数变得特别大。<br>解决办法：对数据进行标准化处理、权重初始化、BN</li>
 <li>退化问题<br>解决办法：残差结构</li>
 </ul>
-<h1 id="残差网络结构"><a href="#残差网络结构" class="headerlink" title="残差网络结构"></a>残差网络结构</h1><p><img src="/images/pasted-18.png" alt="upload successful"><br>左边残差结构适用于层数较少的网络，如ResNet-34，输入的特征矩阵先经过两个$3\times 3$的卷积层，然后与原特征矩阵相加。<br>右面残差结构适用于层数较多的网络，如ResNet-50&#x2F;101&#x2F;152，输入的特征矩阵经过$1\times 1$的卷积层进行降维，然后经过$3\times 3$的卷积层，最后通过$1\times 1$的卷积层进行升维，并与原特征矩阵相加。其中两个$1\times 1$的卷积层起到升降维的作用。<br>注意：主分支与shortcut的输出特征矩阵shape必须相同。<br>假设输入特征矩阵深度都为256，则所需参数个数分别为：</p>
+<h1 id="残差网络结构"><a href="#残差网络结构" class="headerlink" title="残差网络结构"></a>残差网络结构</h1><p><img src="/images/pasted-18.png" alt="upload successful"><br>左边残差结构适用于层数较少的网络，如ResNet-34，输入的特征矩阵先经过两个$3\times 3$的卷积层，然后与原特征矩阵相加。<br>右面残差结构适用于层数较多的网络，如ResNet-50/101/152，输入的特征矩阵经过$1\times 1$的卷积层进行降维，然后经过$3\times 3$的卷积层，最后通过$1\times 1$的卷积层进行升维，并与原特征矩阵相加。其中两个$1\times 1$的卷积层起到升降维的作用。<br>注意：主分支与shortcut的输出特征矩阵shape必须相同。<br>假设输入特征矩阵深度都为256，则所需参数个数分别为：</p>
 <ul>
-<li>左：$3\times 3\times 256\times 256+3\times 3\times 256\times 256&#x3D;1179648$</li>
-<li>右：$1\times 1\times 256\times 64+3\times 3\times 64\times 64+1\times 1\times 64\times 256&#x3D;69632$</li>
+<li>左：$3\times 3\times 256\times 256+3\times 3\times 256\times 256=1179648$</li>
+<li>右：$1\times 1\times 256\times 64+3\times 3\times 64\times 64+1\times 1\times 64\times 256=69632$  </li>
 </ul>
-<h1 id="ResNet网络结构"><a href="#ResNet网络结构" class="headerlink" title="ResNet网络结构"></a>ResNet网络结构</h1><p><img src="/images/pasted-20.png" alt="upload successful"><br>其中残差结构的shortcut虚线与实线的区别：<br><img src="/images/pasted-21.png" alt="upload successful"><br>实线的shortcut没有改变特征矩阵形状，直接将特征矩阵与主分支相加，而虚线的shortcut通过卷积层<strong>改变特征矩阵形状</strong>，使其输出与主分支形状相同。<br>其中conv3-5的第一个残差结构的shortcut都是虚线，50&#x2F;101&#x2F;152-layer的conv2的第一个残差结构的shortcut也为虚线。</p>
+<h1 id="ResNet网络结构"><a href="#ResNet网络结构" class="headerlink" title="ResNet网络结构"></a>ResNet网络结构</h1><p><img src="/images/pasted-20.png" alt="upload successful"><br>其中残差结构的shortcut虚线与实线的区别：<br><img src="/images/pasted-21.png" alt="upload successful"><br>实线的shortcut没有改变特征矩阵形状，直接将特征矩阵与主分支相加，而虚线的shortcut通过卷积层<strong>改变特征矩阵形状</strong>，使其输出与主分支形状相同。<br>其中conv3-5的第一个残差结构的shortcut都是虚线，50/101/152-layer的conv2的第一个残差结构的shortcut也为虚线。</p>
 <h1 id="Batch-Normalization详解"><a href="#Batch-Normalization详解" class="headerlink" title="Batch Normalization详解"></a>Batch Normalization详解</h1><p><strong>目的</strong>：使一批（Batch）feature map（特征矩阵的每个维度）满足均值为0，方差为1的分布规律。<br><strong>具体操作</strong>：对于整个batch而言：<br><img src="/images/pasted-22.png" alt="upload successful"><br>$\mu$为均值，$\sigma^2$为方差，是正向传播中统计得到<br>$\epsilon$避免方差为0<br>$\gamma$和$\beta$分别对方差和均值进行调整，是通过反向传播中训练得到<br><strong>注意事项</strong>：  </p>
 <ol>
 <li>训练时将training参数设置为true，验证时将training参数设置为false。</li>
 <li>batch size尽可能大，batch size越大，所求的均值和方差越接近整个数据集的均值和方差。</li>
-<li>最好将BN层放在卷积层和激活层中间，此时卷积层的bias没有用。</li>
+<li>最好将BN层放在卷积层和激活层中间，此时卷积层的bias没有用。  </li>
 </ol>
-<p><a href="">https://blog.csdn.net/qq_37541097&#x2F;article&#x2F;details&#x2F;104434557</a></p>
+<p><a href="">https://blog.csdn.net/qq_37541097/article/details/104434557</a></p>
 <h1 id="迁移学习简介"><a href="#迁移学习简介" class="headerlink" title="迁移学习简介"></a>迁移学习简介</h1><p>一个预训练的模型被重新用在另一个任务中<br><strong>优势</strong>：</p>
 <ol>
 <li>能够快速训练出一个理想的结果</li>

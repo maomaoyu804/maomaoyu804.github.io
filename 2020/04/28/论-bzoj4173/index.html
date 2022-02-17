@@ -356,12 +356,10 @@
       
 
       
-        <p>依旧是一道欧拉函数qwq<br>可以快乐打表<br>或者蜜汁推导orz…  </p>
-<span id="more"></span>
-
-<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>$S(n,m)$为满足$m mod k+n mod k&gt;&#x3D;k$的所有整数$k$组成的集合，求：</p>
-<p>$$<br>\phi(n)* \phi(m)* \sum_{k\in S(n,m)}\phi(k)mod998224353<br>$$</p>
-<p>n,m&lt;&#x3D;10^15</p>
+        <p>依旧是一道欧拉函数qwq<br>可以快乐打表<br>或者蜜汁推导orz…<br><span id="more"></span></p>
+<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>$S(n,m)$为满足$m mod k+n mod k&gt;=k$的所有整数$k$组成的集合，求：</p>
+<script type="math/tex; mode=display">
+\phi(n)* \phi(m)* \sum_{k\in S(n,m)}\phi(k)mod998224353</script><p>n,m&lt;=10^15</p>
 <h1 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h1><p>输入：<br>m和n  </p>
 <p>输出：<br>如题  </p>
 <p>input<br>5 6  </p>
@@ -373,16 +371,32 @@
 <p><img src="/images/pasted-1.png" alt="图丢了qwq"></p>
 <p>于是令人头疼的$\sum_{k\in S(n,m)}\phi(k)$就变成了$n* m$了qwqwq<br>打表真香<br>代码如下</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> mod=<span class="number">998224353</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">phi</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">    ll ret=x;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">2</span>;i*i&lt;=x;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(x%i==<span class="number">0</span>) ret-=ret/i;</span><br><span class="line">         <span class="keyword">while</span>(x%i==<span class="number">0</span>) x/=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;<span class="number">1</span>) ret-=ret/x;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll a,b;<span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;a,&amp;b);</span><br><span class="line">    cout&lt;&lt;(((<span class="built_in">phi</span>(a)*<span class="built_in">phi</span>(b))%mod)*((a*b)%mod))%mod&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="正经推导"><a href="#正经推导" class="headerlink" title="正经推导"></a>正经推导</h2><p>令$m&#x3D;p_1k+q_1$，$n&#x3D;p_2k+q_2$，因此：</p>
-<p>$$<br>q_1+q_2&gt;&#x3D;k\\<br>\therefore \frac{m+n}{k}&#x3D;p_1+p_2+1\\<br>\therefore \frac{m+n}{k}-\frac{m}{k}-\frac{n}{k}&#x3D;1<br>$$</p>
-<p>所以有：</p>
-<p>$$<br>\begin{aligned}<br> &amp;\sum_{k\in S(m,n)}\phi(k)\\<br>&#x3D;&amp;\sum_{\frac{m+n}{k}-\frac{m}{k}-\frac{n}{k}&#x3D;1}\phi(k)\\<br>&#x3D;&amp;\sum_{k&#x3D;1}^{m+n}\frac{m+n}{k}\phi(k)-\sum_{k&#x3D;1}^{n}\frac{n}{k}\phi(k)-\sum_{k&#x3D;1}^{m}\frac{m}{k}\phi(k)\\<br>\end{aligned}<br>$$</p>
-<p>又因为：<br>$$<br>n&#x3D;\sum_{d|n}\phi(d)<br>$$</p>
-<p>所以：</p>
-<p>$$<br>\begin{aligned}<br>&amp;\sum_{k&#x3D;1}^{n}\frac{n}{k}\phi(k)\\<br>&#x3D;&amp;\sum_{i&#x3D;1}^{n}\sum_{k|i}\phi(k)\\<br>&#x3D;&amp;\sum_{i&#x3D;1}^{n}i\\<br>&#x3D;&amp;\frac{1}{2}n(n+1)\\<br>\end{aligned}<br>$$</p>
-<p>于是</p>
-<p>$$<br>\begin{aligned}<br>&amp;\sum_{k\in S(m,n)}\phi(k)\\<br>&#x3D;&amp;\frac{1}{2}(m+n)* (m+n+1)-\frac{1}{2}n* (n+1)-\frac{1}{2}m* (m+1)\\<br>&#x3D;&amp;m* n<br>\end{aligned}<br>$$</p>
-
+<h2 id="正经推导"><a href="#正经推导" class="headerlink" title="正经推导"></a>正经推导</h2><p>令$m=p_1k+q_1$，$n=p_2k+q_2$，因此：</p>
+<script type="math/tex; mode=display">
+q_1+q_2>=k\\\\
+\therefore \frac{m+n}{k}=p_1+p_2+1\\\\
+\therefore \frac{m+n}{k}-\frac{m}{k}-\frac{n}{k}=1</script><p>所以有：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ &\sum_{k\in S(m,n)}\phi(k)\\\\
+=&\sum_{\frac{m+n}{k}-\frac{m}{k}-\frac{n}{k}=1}\phi(k)\\\\
+=&\sum_{k=1}^{m+n}\frac{m+n}{k}\phi(k)-\sum_{k=1}^{n}\frac{n}{k}\phi(k)-\sum_{k=1}^{m}\frac{m}{k}\phi(k)\\\\
+\end{aligned}</script><p>又因为：</p>
+<script type="math/tex; mode=display">
+n=\sum_{d|n}\phi(d)</script><p>所以：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\sum_{k=1}^{n}\frac{n}{k}\phi(k)\\\\
+=&\sum_{i=1}^{n}\sum_{k|i}\phi(k)\\\\
+=&\sum_{i=1}^{n}i\\\\
+=&\frac{1}{2}n(n+1)\\\\
+\end{aligned}</script><p>于是</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\sum_{k\in S(m,n)}\phi(k)\\\\
+=&\frac{1}{2}(m+n)* (m+n+1)-\frac{1}{2}n* (n+1)-\frac{1}{2}m* (m+1)\\\\
+=&m* n
+\end{aligned}</script>
       
     </div>
     

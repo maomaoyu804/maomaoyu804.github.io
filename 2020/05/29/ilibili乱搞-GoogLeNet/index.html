@@ -368,8 +368,8 @@
 </ul>
 <h1 id="前置技能"><a href="#前置技能" class="headerlink" title="前置技能"></a>前置技能</h1><h2 id="1-1矩阵降维"><a href="#1-1矩阵降维" class="headerlink" title="1 * 1矩阵降维"></a>1 * 1矩阵降维</h2><p><img src="/images/pasted-15.png" alt="upload successful"><br>考虑channel为512的特征矩阵：</p>
 <ul>
-<li>不使用1 * 1的卷积核进行降维：<br>使用64个$5\times 5$的卷积核进行卷积，所需特征值个数为$5 \times 5 \times 512 \times 64&#x3D;819200$</li>
-<li>使用$1 \times 1$的卷积核进行降维：<br>首先使用24个$1\times 1$的卷积核进行卷积，得到channel为24的特征矩阵，然后使用64个$5\times 5$的卷积核进行卷积。所需参数个数为$1\times 1\times 512\times 24+5\times 5\times 24\times 64&#x3D;50688$</li>
+<li>不使用1 * 1的卷积核进行降维：<br>使用64个$5\times 5$的卷积核进行卷积，所需特征值个数为$5 \times 5 \times 512 \times 64=819200$</li>
+<li>使用$1 \times 1$的卷积核进行降维：<br>首先使用24个$1\times 1$的卷积核进行卷积，得到channel为24的特征矩阵，然后使用64个$5\times 5$的卷积核进行卷积。所需参数个数为$1\times 1\times 512\times 24+5\times 5\times 24\times 64=50688$</li>
 </ul>
 <h2 id="Inception结构"><a href="#Inception结构" class="headerlink" title="Inception结构"></a>Inception结构</h2><p>之前所提到的网络，例如AlexNet和VGG等，都是串行结构，将卷积层和下采样层等进行串联得到，而Inception采用并行结构。<br>初始版本：将所得到的特征矩阵同时输入到四个分支中进行处理，将得到的特征矩阵按深度拼接，得到输出矩阵。<br><img src="/images/pasted-13.png" alt="upload successful"><br>加入降维功能：加入三个1 * 1的卷积核，起到降维作用。<br><img src="/images/pasted-14.png" alt="upload successful"><br>注：每个分支所得到的特征矩阵高和宽必须相同。</p>
 <h2 id="辅助分类器"><a href="#辅助分类器" class="headerlink" title="辅助分类器"></a>辅助分类器</h2><p><img src="/images/pasted-16.png" alt="upload successful"></p>

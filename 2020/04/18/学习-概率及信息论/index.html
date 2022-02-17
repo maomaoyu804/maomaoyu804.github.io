@@ -364,7 +364,6 @@
       
         <p>假装有摘要</p>
 <span id="more"></span>
-
 <p>概率论：不确定性声明的数学框架。提供了量化不确定性的方法，也提供了用于导出新的不确定性声明的公理。</p>
 <h1 id="为什么使用概率论"><a href="#为什么使用概率论" class="headerlink" title="为什么使用概率论"></a>为什么使用概率论</h1><p>不确定性可能的来源：</p>
 <ol>
@@ -386,16 +385,16 @@
 <h1 id="概率分布"><a href="#概率分布" class="headerlink" title="概率分布"></a>概率分布</h1><p>概率分布：用来描述随机变量或一簇随机变量在每一个可能取到的状态的<strong>可能性大小</strong>。</p>
 <ul>
 <li><p>离散型变量和概率质量函数：</p>
-<p>概率质量函数(PMF)：表示离散型变量的分布。$P(\mathrm{x}&#x3D;x)$</p>
+<p>概率质量函数(PMF)：表示离散型变量的分布。$P(\mathrm{x}=x)$</p>
 <p>​    表示随机变量遵循的分布：$\mathbf{x} \sim P(\mathbf{x})$</p>
-<p>联合概率分布：多个变量的概率分布。$P(\mathrm{x}&#x3D;x, \mathrm{y}&#x3D;y)$，简写为$P(x, y)$</p>
+<p>联合概率分布：多个变量的概率分布。$P(\mathrm{x}=x, \mathrm{y}=y)$，简写为$P(x, y)$</p>
 <p>PMF满足条件：</p>
 <ul>
 <li><em>P</em> 的定义域必须是 x 所有可能状态的集合。</li>
 <li>$\forall x \in \mathrm{x}, 0 \leq P(x) \leq 1$</li>
-<li>$\sum_{x \in \mathrm{x}} P(x)&#x3D;1$（归一化）</li>
+<li>$\sum_{x \in \mathrm{x}} P(x)=1$（归一化）</li>
 </ul>
-<p>均匀分布：$P\left(\mathrm{x}&#x3D;x_{i}\right)&#x3D;\frac{1}{k}$</p>
+<p>均匀分布：$P\left(\mathrm{x}=x_{i}\right)=\frac{1}{k}$</p>
 </li>
 <li><p>连续型变量和概率密度函数：</p>
 <p>概率密度函数：PDF</p>
@@ -403,12 +402,12 @@
 <ul>
 <li><em>p</em> 的定义域必须是 x 所有可能状态的集合。</li>
 <li>$\forall x \in \mathrm{x}, p(x) \geq 0 .$ （不要求 $p(x) \leq 1$）</li>
-<li>$\int p(x) d x&#x3D;1$</li>
+<li>$\int p(x) d x=1$</li>
 </ul>
 <p>给出了面积为$\delta \boldsymbol{x}$的无限小区域内的概率为$p(x) \delta x$</p>
 <p>概率由概率密度函数积分得到。</p>
 <p>均匀分布：$u(x ; a, b)$，$x$为自变量，$a$和$b$为参数。</p>
-<p>$u(x ; a, b)&#x3D;\left{\begin{array}{ll}0 &amp; x \notin[a, b] \\ \frac{1}{b-a} &amp; x \in[a, b]\end{array}\right.$</p>
+<p>$u(x ; a, b)=\left{\begin{array}{ll}0 &amp; x \notin[a, b] \\ \frac{1}{b-a} &amp; x \in[a, b]\end{array}\right.$</p>
 <p>​    通常用$\mathrm{x} \sim U(a, b)$表示。</p>
 </li>
 </ul>
@@ -416,62 +415,68 @@
 <ul>
 <li>对于离散型随机变量：</li>
 </ul>
-<p>$$<br>\forall x \in \mathrm{x}, P(\mathrm{x}&#x3D;x)&#x3D;\sum P(\mathrm{x}&#x3D;x, \mathrm{y}&#x3D;y)<br>$$</p>
-<ul>
+<script type="math/tex; mode=display">
+\forall x \in \mathrm{x}, P(\mathrm{x}=x)=\sum P(\mathrm{x}=x, \mathrm{y}=y)</script><ul>
 <li><p>对于连续型随机变量：</p>
-<p>$$<br>p(x)&#x3D;\int p(x, y) d y<br>$$</p>
-</li>
+<script type="math/tex; mode=display">
+p(x)=\int p(x, y) d y</script></li>
 </ul>
 <h1 id="条件概率及其链式法则"><a href="#条件概率及其链式法则" class="headerlink" title="条件概率及其链式法则"></a>条件概率及其链式法则</h1><ul>
 <li>条件概率：</li>
 </ul>
-<p>$$<br>P(\mathrm{y}&#x3D;y | \mathrm{x}&#x3D;x)&#x3D;\frac{P(\mathrm{y}&#x3D;y, \mathrm{x}&#x3D;x)}{P(\mathrm{x}&#x3D;x)}<br>$$</p>
-<p>条件概率只在$P(\mathrm{x}&#x3D;x)&gt;0$时有定义。</p>
+<script type="math/tex; mode=display">
+P(\mathrm{y}=y | \mathrm{x}=x)=\frac{P(\mathrm{y}=y, \mathrm{x}=x)}{P(\mathrm{x}=x)}</script><p>条件概率只在$P(\mathrm{x}=x)&gt;0$时有定义。</p>
 <ul>
 <li><p>链式法则：</p>
-<p>$$<br>P\left(\mathrm{x}^{(1)}, \ldots, \mathrm{x}^{(n)}\right)&#x3D;P\left(\mathrm{x}^{(1)}\right) \Pi _ {i&#x3D;2}^{n} P\left(\mathrm{x}^{(i)} | \mathrm{x}^{(1)}, \ldots, \mathrm{x}^{(i-1)} \right)<br>$$</p>
-<p>例：</p>
+<script type="math/tex; mode=display">
+P\left(\mathrm{x}^{(1)}, \ldots, \mathrm{x}^{(n)}\right)=P\left(\mathrm{x}^{(1)}\right) \Pi _ {i=2}^{n} P\left(\mathrm{x}^{(i)} | \mathrm{x}^{(1)}, \ldots, \mathrm{x}^{(i-1)} \right)</script><p>例：</p>
 </li>
 </ul>
-<p>$$<br>P(\mathrm{a}, \mathrm{b}, \mathrm{c})&#x3D;P(\mathrm{a} | \mathrm{b}, \mathrm{c}) P(\mathrm{b} | \mathrm{c}) P(\mathrm{c})<br>$$</p>
-<h1 id="独立性和条件独立性"><a href="#独立性和条件独立性" class="headerlink" title="独立性和条件独立性"></a>独立性和条件独立性</h1><p>相互独立$\mathrm x \perp \mathrm y$：概率分布可以表示成两个因子的乘积，因子分别只包含 x 和 y。</p>
-<p>$$<br>\forall x \in \mathrm{x}, y \in \mathrm{y}, p(\mathrm{x}&#x3D;x, \mathrm{y}&#x3D;y)&#x3D;p(\mathrm{x}&#x3D;x) p(\mathrm{y}&#x3D;y)<br>$$</p>
-<p>条件独立$\mathrm x \perp \mathrm y | \mathrm z$：关于 x 和 y 的条件概率分布对于 <em>z</em> 的每一个值都可以写成乘积的形式。</p>
-<p>$$<br>\forall x \in \mathrm{x}, y \in \mathrm{y}, z \in \mathrm{z}, p(\mathrm{x}&#x3D;x, \mathrm{y}&#x3D;y | \mathrm{z}&#x3D;z)&#x3D;p(\mathrm{x}&#x3D;x | \mathrm{z}&#x3D;z) p(\mathrm{y}&#x3D;y | \mathrm{z}&#x3D;z)<br>$$</p>
-<h1 id="期望、方差和协方差"><a href="#期望、方差和协方差" class="headerlink" title="期望、方差和协方差"></a>期望、方差和协方差</h1><p><strong>期望</strong>（期望值）：平均值</p>
+<script type="math/tex; mode=display">
+P(\mathrm{a}, \mathrm{b}, \mathrm{c})=P(\mathrm{a} | \mathrm{b}, \mathrm{c}) P(\mathrm{b} | \mathrm{c}) P(\mathrm{c})</script><h1 id="独立性和条件独立性"><a href="#独立性和条件独立性" class="headerlink" title="独立性和条件独立性"></a>独立性和条件独立性</h1><p>相互独立$\mathrm x \perp \mathrm y$：概率分布可以表示成两个因子的乘积，因子分别只包含 x 和 y。</p>
+<script type="math/tex; mode=display">
+\forall x \in \mathrm{x}, y \in \mathrm{y}, p(\mathrm{x}=x, \mathrm{y}=y)=p(\mathrm{x}=x) p(\mathrm{y}=y)</script><p>条件独立$\mathrm x \perp \mathrm y | \mathrm z$：关于 x 和 y 的条件概率分布对于 <em>z</em> 的每一个值都可以写成乘积的形式。</p>
+<script type="math/tex; mode=display">
+\forall x \in \mathrm{x}, y \in \mathrm{y}, z \in \mathrm{z}, p(\mathrm{x}=x, \mathrm{y}=y | \mathrm{z}=z)=p(\mathrm{x}=x | \mathrm{z}=z) p(\mathrm{y}=y | \mathrm{z}=z)</script><h1 id="期望、方差和协方差"><a href="#期望、方差和协方差" class="headerlink" title="期望、方差和协方差"></a>期望、方差和协方差</h1><p><strong>期望</strong>（期望值）：平均值</p>
 <ul>
 <li>离散型：</li>
 </ul>
-<p>$$<br>\mathbb{E}<em>{x \sim P}[f(x)]&#x3D;\sum</em>{x} P(x) f(x)<br>$$</p>
-<ul>
+<script type="math/tex; mode=display">
+\mathbb{E}_{x \sim P}[f(x)]=\sum_{x} P(x) f(x)</script><ul>
 <li><p>连续性：</p>
-<p>$$<br>\mathbb{E} _ {x \sim p}[f(x)]&#x3D;\int p(x) f(x) d x<br>$$</p>
-</li>
+<script type="math/tex; mode=display">
+\mathbb{E} _ {x \sim p}[f(x)]=\int p(x) f(x) d x</script></li>
 </ul>
 <p>线性：</p>
-<p>$$<br>\mathbb{E} _ {\mathrm{x}}[\alpha f(x)+\beta g(x)]&#x3D;\alpha \mathbb{E} _ {\mathrm{x}}[f(x)] + \beta \mathbb{E} _ {\mathrm{x}}[g(x)]<br>$$</p>
-<p><strong>方差</strong>：对$x$依据他的概率分布进行采样时，函数值的差异大小。</p>
-<p>$$<br>\operatorname{Var}(f(x))&#x3D;\mathbb{E}\left[(f(x)-\mathbb{E}[f(x)])^{2}\right]<br>$$</p>
-<p><strong>标准差</strong>：方差的平方根</p>
+<script type="math/tex; mode=display">
+\mathbb{E} _ {\mathrm{x}}[\alpha f(x)+\beta g(x)]=\alpha \mathbb{E} _ {\mathrm{x}}[f(x)] + \beta \mathbb{E} _ {\mathrm{x}}[g(x)]</script><p><strong>方差</strong>：对$x$依据他的概率分布进行采样时，函数值的差异大小。</p>
+<script type="math/tex; mode=display">
+\operatorname{Var}(f(x))=\mathbb{E}\left[(f(x)-\mathbb{E}[f(x)])^{2}\right]</script><p><strong>标准差</strong>：方差的平方根</p>
 <p><strong>协方差</strong>：两个变量<strong>线性相关</strong>强度及这些变量的尺度</p>
-<p>$$<br>\operatorname{Cov}(f(x), g(y))&#x3D;\mathbb{E}[(f(x)-\mathbb{E}[f(x)])(g(y)-\mathbb{E}[g(y)])]<br>$$</p>
-<p>​    绝对值大：变量值变化很大，且距离各自的均值远。</p>
+<script type="math/tex; mode=display">
+\operatorname{Cov}(f(x), g(y))=\mathbb{E}[(f(x)-\mathbb{E}[f(x)])(g(y)-\mathbb{E}[g(y)])]</script><p>​    绝对值大：变量值变化很大，且距离各自的均值远。</p>
 <p>​    协方差为正：两变量倾向于同时取得较大值。</p>
 <p>​    相关系数：只衡量变量的相关性而不受尺度大小影响。</p>
-<p>独立性比零协方差要求更强：两个变量相互依赖但协方差为零：$y&#x3D;sx$</p>
-<p><strong>协方差矩阵</strong>：方阵，且$\operatorname{Cov}(\mathbf{x}) _ {i, j}&#x3D;\operatorname{Cov}\left(\mathbf{x} _ {i}, \mathbf{x} _ {j}\right)$，其对角元素为方差。</p>
+<p>独立性比零协方差要求更强：两个变量相互依赖但协方差为零：$y=sx$</p>
+<p><strong>协方差矩阵</strong>：方阵，且$\operatorname{Cov}(\mathbf{x}) <em> {i, j}=\operatorname{Cov}\left(\mathbf{x} </em> {i}, \mathbf{x} _ {j}\right)$，其对角元素为方差。</p>
 <h1 id="常用概率分布"><a href="#常用概率分布" class="headerlink" title="常用概率分布"></a>常用概率分布</h1><p><strong>Bernoulli 分布</strong>（二点分布）：单个二值随机变量的分布，<em>ϕ</em> 给出了随机变量等于 1 的概率。</p>
 <p>性质：</p>
-<p>$$<br>\begin{array}{c}<br>P(\mathrm{x}&#x3D;1)&#x3D;\phi \\<br>P(\mathrm{x}&#x3D;0)&#x3D;1-\phi \\<br>P(\mathrm{x}&#x3D;x)&#x3D;\phi^{x}(1-\phi)^{1-x} \\<br>\mathbb{E} _ {\mathrm{x}}[\mathrm{x}]&#x3D;\phi \\<br>\operatorname{Var} _ {\mathrm{x}}(\mathrm{x})&#x3D;\phi(1-\phi)<br>\end{array}<br>$$</p>
-<p><strong>Multinoulli 分布</strong>(多项式分布)：在具有 <em>k</em> 个不同状态的单个离散型随机变量上的分布（k为有限值）。</p>
+<script type="math/tex; mode=display">
+\begin{array}{c}
+P(\mathrm{x}=1)=\phi \\\\
+P(\mathrm{x}=0)=1-\phi \\\\
+P(\mathrm{x}=x)=\phi^{x}(1-\phi)^{1-x} \\\\
+\mathbb{E} _ {\mathrm{x}}[\mathrm{x}]=\phi \\\\
+\operatorname{Var} _ {\mathrm{x}}(\mathrm{x})=\phi(1-\phi)
+\end{array}</script><p><strong>Multinoulli 分布</strong>(多项式分布)：在具有 <em>k</em> 个不同状态的单个离散型随机变量上的分布（k为有限值）。</p>
 <p>由向量$\boldsymbol{p} \in[0,1]^{k-1}$参数化，$ p_i$ 表示第$i$个状态的概率。第$k$个状态的概率为$1-1^{\top} p$.</p>
 <p>表示对象分类的分布。</p>
 <p><strong>高斯分布</strong>（正态分布）：</p>
-<p>$$<br>\mathcal{N}\left(x ; \mu, \sigma^{2}\right)&#x3D;\sqrt{\frac{1}{2 \pi \sigma^{2}}} \exp \left(-\frac{1}{2 \sigma^{2}}(x-\mu)^{2}\right)<br>$$</p>
-<p>其中$\mu$为中心峰值坐标，同时$\mathbb{E}[\mathbf{x}]&#x3D;\mu$，$\sigma$为标准差。</p>
+<script type="math/tex; mode=display">
+\mathcal{N}\left(x ; \mu, \sigma^{2}\right)=\sqrt{\frac{1}{2 \pi \sigma^{2}}} \exp \left(-\frac{1}{2 \sigma^{2}}(x-\mu)^{2}\right)</script><p>其中$\mu$为中心峰值坐标，同时$\mathbb{E}[\mathbf{x}]=\mu$，$\sigma$为标准差。</p>
 <p>控制精度：方差的倒数</p>
-<p>$$<br>\mathcal{N}\left(x ; \mu, \beta^{-1}\right)&#x3D;\sqrt{\frac{\beta}{2 \pi}} \exp \left(-\frac{1}{2} \beta(x-\mu)^{2}\right)<br>$$</p>
-<p>采用正态分布的原因：</p>
+<script type="math/tex; mode=display">
+\mathcal{N}\left(x ; \mu, \beta^{-1}\right)=\sqrt{\frac{\beta}{2 \pi}} \exp \left(-\frac{1}{2} \beta(x-\mu)^{2}\right)</script><p>采用正态分布的原因：</p>
 <ul>
 <li><p>中心极限定理：很多独立随机变量的和近似服从正态分布</p>
 </li>
@@ -479,22 +484,22 @@
 </li>
 </ul>
 <p>多维正态分布：</p>
-<p>$$<br>\mathcal{N}(x, \mu, \Sigma)&#x3D;\sqrt{\frac{1}{(2 \pi)^{n} \operatorname{det}(\Sigma)}} \exp \left(-\frac{1}{2}(x-\mu)^{\top} \Sigma^{-1}(x-\mu)\right)<br>$$</p>
-<p>其中$\boldsymbol \mu$表示分布的均值，为向量。$\Sigma$为分布的协方差矩阵（正定对称矩阵）</p>
+<script type="math/tex; mode=display">
+\mathcal{N}(x, \mu, \Sigma)=\sqrt{\frac{1}{(2 \pi)^{n} \operatorname{det}(\Sigma)}} \exp \left(-\frac{1}{2}(x-\mu)^{\top} \Sigma^{-1}(x-\mu)\right)</script><p>其中$\boldsymbol \mu$表示分布的均值，为向量。$\Sigma$为分布的协方差矩阵（正定对称矩阵）</p>
 <p>用精度矩阵$\boldsymbol \beta$代替$\Sigma^{-1}$：</p>
-<p>$$<br>\mathcal{N}\left(\boldsymbol{x} ; \boldsymbol{\mu}, \boldsymbol{\beta}^{-1}\right)&#x3D;\sqrt{\frac{\operatorname{det}(\boldsymbol{\beta})}{(2 \pi)^{n}}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^{\top} \boldsymbol{\beta}(\boldsymbol{x}-\boldsymbol{\mu})\right)<br>$$</p>
-<p><strong>指数分布</strong>：可以在$x&#x3D;0$处取得边界点。</p>
-<p>$$<br>p(x ; \lambda)&#x3D;\lambda \mathbf{1} _ {x \geq 0} \exp (-\lambda x)<br>$$</p>
-<p>指示函数$\mathbf{1} _ {x \geq 0}$：使得当 <em>x</em> 取负值时的概率为零。</p>
+<script type="math/tex; mode=display">
+\mathcal{N}\left(\boldsymbol{x} ; \boldsymbol{\mu}, \boldsymbol{\beta}^{-1}\right)=\sqrt{\frac{\operatorname{det}(\boldsymbol{\beta})}{(2 \pi)^{n}}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^{\top} \boldsymbol{\beta}(\boldsymbol{x}-\boldsymbol{\mu})\right)</script><p><strong>指数分布</strong>：可以在$x=0$处取得边界点。</p>
+<script type="math/tex; mode=display">
+p(x ; \lambda)=\lambda \mathbf{1} _ {x \geq 0} \exp (-\lambda x)</script><p>指示函数$\mathbf{1} _ {x \geq 0}$：使得当 <em>x</em> 取负值时的概率为零。</p>
 <p><strong>Laplace 分布</strong>：在任意一点$\mu$处蛇直概率质量峰值。</p>
-<p>$$<br>\text { Laplace }(x ; \mu, \gamma)&#x3D;\frac{1}{2 \gamma} \exp \left(-\frac{|x-\mu|}{\gamma}\right)<br>$$</p>
-<p><strong>Dirac分布</strong>：</p>
-<p>$$<br>p(x)&#x3D;\delta(x-\mu)<br>$$</p>
-<p>其中delta函数：在除了0以外的所有点的值都为0，但积分为1.</p>
+<script type="math/tex; mode=display">
+\text { Laplace }(x ; \mu, \gamma)=\frac{1}{2 \gamma} \exp \left(-\frac{|x-\mu|}{\gamma}\right)</script><p><strong>Dirac分布</strong>：</p>
+<script type="math/tex; mode=display">
+p(x)=\delta(x-\mu)</script><p>其中delta函数：在除了0以外的所有点的值都为0，但积分为1.</p>
 <p><strong>经验分布</strong>：</p>
 <p>连续型随机变量：</p>
-<p>$$<br>\hat{p}(x)&#x3D;\frac{1}{m} \sum _ {i&#x3D;1}^{m} \delta\left(x-x^{(i)}\right)<br>$$</p>
-<p>离散型随机变量： Multinoulli 分布，对于每一个可能的输入，其概率可以简单地设为在训练集上那个输入值的<strong>经验频率</strong>。</p>
+<script type="math/tex; mode=display">
+\hat{p}(x)=\frac{1}{m} \sum _ {i=1}^{m} \delta\left(x-x^{(i)}\right)</script><p>离散型随机变量： Multinoulli 分布，对于每一个可能的输入，其概率可以简单地设为在训练集上那个输入值的<strong>经验频率</strong>。</p>
 <p>关于经验分布：</p>
 <ul>
 <li>从这个训练集上得到的经验分布指明了我们采样来源的分布。</li>
@@ -502,11 +507,11 @@
 </ul>
 <p><strong>混合分布</strong>：通过简单的概率分布定义新的概率分布。</p>
 <p>样本是由哪个组件分布产生的取决于从一个 Multinoulli 分布中采样的结果：</p>
-<p>$$<br>P(\mathrm{x})&#x3D;\sum _ {i} P(\mathrm{c}&#x3D;i) P(\mathrm{x} | \mathrm{c}&#x3D;i)<br>$$</p>
-<p>经验分布即为Dirac分布为组件的混合分布。</p>
+<script type="math/tex; mode=display">
+P(\mathrm{x})=\sum _ {i} P(\mathrm{c}=i) P(\mathrm{x} | \mathrm{c}=i)</script><p>经验分布即为Dirac分布为组件的混合分布。</p>
 <p>潜变量：不能直接观测到的随机变量，c。</p>
-<p><strong>高斯混合模型</strong>：组件$p(\mathbf{x} | \mathbf{c}&#x3D;i)$为高斯分布，每个组件有各自的参数（均值、协方差矩阵、先验概率）。</p>
-<p>先验概率：$\alpha_{i}&#x3D;P(\mathrm{c}&#x3D;i)$，观测到x之前传递给模型。</p>
+<p><strong>高斯混合模型</strong>：组件$p(\mathbf{x} | \mathbf{c}=i)$为高斯分布，每个组件有各自的参数（均值、协方差矩阵、先验概率）。</p>
+<p>先验概率：$\alpha_{i}=P(\mathrm{c}=i)$，观测到x之前传递给模型。</p>
 <p>后验概率：$P(c | \boldsymbol x)$，观测到x后计算。</p>
 <p>任何平滑的概率密度都可以用具有足够多组件的高斯混合模型以任意精度逼近。</p>
 <p><img src="http://tjunet.top/typecho/usr/upload/2020/04/2140106837.png" alt="1.png"></p>
@@ -514,21 +519,33 @@
 <p>中间组件：对角协方差矩阵：可以沿每个轴的对齐方向单独控制方差。</p>
 <p>最右组件：满秩协方差矩阵：沿任意方向单独控制方差。</p>
 <h1 id="常用函数的有用性质"><a href="#常用函数的有用性质" class="headerlink" title="常用函数的有用性质"></a>常用函数的有用性质</h1><p><strong>logistic sigmoid函数</strong>：范围是(0,1)，通常用来产生Bernoulli分布中的参数$\phi$。</p>
-<p>$$<br>\sigma(x)&#x3D;\frac{1}{1+\exp (-x)}<br>$$</p>
-<p>sigmoid函数在变量绝对值很大时会出现饱和现象，函数很平，对输入的微小改变不敏感。</p>
+<script type="math/tex; mode=display">
+\sigma(x)=\frac{1}{1+\exp (-x)}</script><p>sigmoid函数在变量绝对值很大时会出现饱和现象，函数很平，对输入的微小改变不敏感。</p>
 <p><img src="http://tjunet.top/typecho/usr/upload/2020/04/2164384247.png" alt="2.png"></p>
 <p><strong>softplus函数</strong>：范围是$(0, \infty)$，用来产生正态分布的$\beta$和$\sigma$参数。</p>
-<p>$$<br>\zeta(x)&#x3D;\log (1+\exp (x))<br>$$</p>
-<p><img src="http://tjunet.top/typecho/usr/upload/2020/04/3705442436.png" alt="3.png"></p>
+<script type="math/tex; mode=display">
+\zeta(x)=\log (1+\exp (x))</script><p><img src="http://tjunet.top/typecho/usr/upload/2020/04/3705442436.png" alt="3.png"></p>
 <p>一些性质QAQ：</p>
-<p>$$<br>\begin{aligned}<br>&amp;\sigma(x)&#x3D;\frac{\exp (x)}{\exp (x)+\exp (0)}\\<br>&amp;\frac{d}{d x} \sigma(x)&#x3D;\sigma(x)(1-\sigma(x))\\<br>&amp;\begin{aligned}<br>1-\sigma(x) &amp;&#x3D;\sigma(-x) \\<br>\log \sigma(x) &amp;&#x3D;-\zeta(-x) \\<br>\frac{d}{d x} \zeta(x) &amp;&#x3D;\sigma(x)<br>\end{aligned}\\<br>&amp;\forall x \in(0,1), \sigma^{-1}(x)&#x3D;\log \left(\frac{x}{1-x}\right)\\<br>&amp;\forall x&gt;0, \zeta^{-1}(x)&#x3D;\log (\exp (x)-1)\\<br>&amp;\zeta(x)&#x3D;\int _ {-\infty}^{x} \sigma(y) d y\\<br>&amp;\zeta(x)-\zeta(-x)&#x3D;x<br>\end{aligned}<br>$$</p>
-<p>正部函数：$x^{+}&#x3D;\max {0, x}$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\sigma(x)=\frac{\exp (x)}{\exp (x)+\exp (0)}\\\\
+&\frac{d}{d x} \sigma(x)=\sigma(x)(1-\sigma(x))\\\\
+&\begin{aligned}
+1-\sigma(x) &=\sigma(-x) \\\\
+\log \sigma(x) &=-\zeta(-x) \\\\
+\frac{d}{d x} \zeta(x) &=\sigma(x)
+\end{aligned}\\\\
+&\forall x \in(0,1), \sigma^{-1}(x)=\log \left(\frac{x}{1-x}\right)\\\\
+&\forall x>0, \zeta^{-1}(x)=\log (\exp (x)-1)\\\\
+&\zeta(x)=\int _ {-\infty}^{x} \sigma(y) d y\\\\
+&\zeta(x)-\zeta(-x)=x
+\end{aligned}</script><p>正部函数：$x^{+}=\max {0, x}$</p>
 <p>正部函数平滑版：$\zeta(x)$</p>
-<p>负部函数：$x^{-}&#x3D;\max {0,-x}$</p>
+<p>负部函数：$x^{-}=\max {0,-x}$</p>
 <p>负部函数平滑版：$\zeta(-x)$</p>
-<p>$x^{+}-x^{-}&#x3D;x$，因此$\zeta(x)-\zeta(-x)&#x3D;x$</p>
-<h1 id="贝叶斯规则"><a href="#贝叶斯规则" class="headerlink" title="贝叶斯规则"></a>贝叶斯规则</h1><p>$$<br>P(\mathrm{x} | \mathrm{y})&#x3D;\frac{P(\mathrm{x}) P(\mathrm{y} | \mathrm{x})}{P(\mathrm{y})}<br>$$</p>
-<p>其中$P(\mathrm{y})&#x3D;\sum _ {x} P(\mathrm{y} | x) P(x)$</p>
+<p>$x^{+}-x^{-}=x$，因此$\zeta(x)-\zeta(-x)=x$</p>
+<h1 id="贝叶斯规则"><a href="#贝叶斯规则" class="headerlink" title="贝叶斯规则"></a>贝叶斯规则</h1><script type="math/tex; mode=display">
+P(\mathrm{x} | \mathrm{y})=\frac{P(\mathrm{x}) P(\mathrm{y} | \mathrm{x})}{P(\mathrm{y})}</script><p>其中$P(\mathrm{y})=\sum _ {x} P(\mathrm{y} | x) P(x)$</p>
 <h1 id="连续型变量的细节"><a href="#连续型变量的细节" class="headerlink" title="连续型变量的细节"></a>连续型变量的细节</h1><p>测度论：是提供了一些集合的特征使得我们在计算概率时不会遇到悖论。</p>
 <p>零测度：一种严格的方式来描述那些非常微小的点集。零测度集在我们的度量空间中不占有任何的体积，如二维空间的直线。</p>
 <h1 id="信息论"><a href="#信息论" class="headerlink" title="信息论"></a>信息论</h1><p><strong>信息论</strong>：是对一个信号包含信息的多少进行量化。在机器学习中，也可以把信息论应用于连续型变量。</p>
@@ -543,16 +560,16 @@
 </li>
 </ul>
 <p><strong>自信息</strong>：</p>
-<p>$$<br>I(x)&#x3D;-\log P(x)<br>$$</p>
-<p>本书中，单位为奈特：一奈特是以$\frac{1}{e}$的概率观测到一个事件时获得的信息量.</p>
+<script type="math/tex; mode=display">
+I(x)=-\log P(x)</script><p>本书中，单位为奈特：一奈特是以$\frac{1}{e}$的概率观测到一个事件时获得的信息量.</p>
 <p><strong>香农熵</strong>：对整个概率分布中的不确定性总量进行量化</p>
-<p>$$<br>H(\mathrm{x})&#x3D;\mathbb{E} _ {x \sim P}[I(x)]&#x3D;-\mathbb{E} _ {x \sim P}[\log P(x)]<br>$$</p>
-<p>当x连续，香农熵被称为微分熵。</p>
+<script type="math/tex; mode=display">
+H(\mathrm{x})=\mathbb{E} _ {x \sim P}[I(x)]=-\mathbb{E} _ {x \sim P}[\log P(x)]</script><p>当x连续，香农熵被称为微分熵。</p>
 <p>接近确定性的分布熵较低，接近均匀分布的概率分布的熵高。</p>
 <p><img src="http://tjunet.top/typecho/usr/upload/2020/04/1648678033.png" alt="4.png"></p>
 <p><strong>KL散度</strong>：对于同一个x的两个单独的概率分布的差异：</p>
-<p>$$<br>D_{\mathrm{KL}}(P | Q)&#x3D;\mathbb{E} _ {\mathrm{x} \sim P}\left[\log \frac{P(x)}{Q(x)}\right]&#x3D;\mathbb{E} _ {x \sim P}[\log P(x)-\log Q(x)]<br>$$</p>
-<ul>
+<script type="math/tex; mode=display">
+D_{\mathrm{KL}}(P \| Q)=\mathbb{E} _ {\mathrm{x} \sim P}\left[\log \frac{P(x)}{Q(x)}\right]=\mathbb{E} _ {x \sim P}[\log P(x)-\log Q(x)]</script><ul>
 <li><strong>离散型变量</strong>：KL 散度衡量的是，当使用使得Q产生的消息的长度最小的编码，发送包含P产生的符号的消息时，所需要的<strong>额外信息量</strong>。</li>
 </ul>
 <p>KL散度非负。</p>
@@ -562,23 +579,23 @@
 <p>左图：近似分布 <em>q</em> 在真实分布 <em>p</em> 放置高概率的所有地方都放置高概率</p>
 <p>右图：近似分布 <em>q</em> 在真实分布 <em>p</em> 放置低概率的所有地方都放置低概率</p>
 <p><strong>交叉熵</strong>：</p>
-<p>$$<br>H(P, Q)&#x3D;H(P)+D _ {\mathrm{KL}}(P | Q)<br>$$</p>
-<p>$$<br>H(P, Q)&#x3D;-\mathbb{E} _ {x \sim P} \log Q(x)<br>$$</p>
-<p>针对 <em>Q</em> 最小化交叉熵等价于最小化 KL 散度.</p>
-<p>0log0&#x3D;0</p>
+<script type="math/tex; mode=display">
+H(P, Q)=H(P)+D _ {\mathrm{KL}}(P \| Q)</script><script type="math/tex; mode=display">
+H(P, Q)=-\mathbb{E} _ {x \sim P} \log Q(x)</script><p>针对 <em>Q</em> 最小化交叉熵等价于最小化 KL 散度.</p>
+<p>0log0=0</p>
 <h1 id="结构化概率模型"><a href="#结构化概率模型" class="headerlink" title="结构化概率模型"></a>结构化概率模型</h1><p>机器学习中算法设计非常多随机变量上的概率分布，但设计的直接相互作用很少，因此将概率分布分解成许多因子的乘积形式。</p>
 <p>每个因子使用的参数数目是变量数目的指数倍。因此如果找到使每个因子分布具有更少变量的分解方法，就能降低表示联合分布的成本。</p>
 <p><strong>结构化概率模型</strong>（图模型）：有向或无向。每个节点对应一个随机变量，边表示概率分布可以表示为两个随机变量之间的直接作用。</p>
-<p><strong>有向</strong>：条件概率分布表示分解。对于每个随机变量$x_i$，都包含一个影响因子（父节点）$P a_{\mathcal{G}}\left(\mathrm{x}_ {i}\right)$：</p>
-<p>$$<br>p(\mathbf{x})&#x3D;\prod _ {i} p\left(\mathbf{x} _ {i} | P a _ {\mathcal{G}}\left(\mathbf{x} _ {i}\right)\right)<br>$$</p>
-<p><img src="http://tjunet.top/typecho/usr/upload/2020/04/1292113754.png" alt="6.png"></p>
-<p>$$<br>p(a,b,c,d,e)&#x3D;p(a) p(b | a) p(c | a, b) p(d | b) p(e | c)<br>$$</p>
-<p><strong>无向</strong>：将分解表示成一组函数，每个团$\mathcal{C}^{(i)}$都伴随一个因子$\phi^{(i)}\left(\mathcal{C}^{(i)}\right)$</p>
+<p><strong>有向</strong>：条件概率分布表示分解。对于每个随机变量$x<em>i$，都包含一个影响因子（父节点）$P a</em>{\mathcal{G}}\left(\mathrm{x}_ {i}\right)$：</p>
+<script type="math/tex; mode=display">
+p(\mathbf{x})=\prod _ {i} p\left(\mathbf{x} _ {i} | P a _ {\mathcal{G}}\left(\mathbf{x} _ {i}\right)\right)</script><p><img src="http://tjunet.top/typecho/usr/upload/2020/04/1292113754.png" alt="6.png"></p>
+<script type="math/tex; mode=display">
+p(a,b,c,d,e)=p(a) p(b | a) p(c | a, b) p(d | b) p(e | c)</script><p><strong>无向</strong>：将分解表示成一组函数，每个团$\mathcal{C}^{(i)}$都伴随一个因子$\phi^{(i)}\left(\mathcal{C}^{(i)}\right)$</p>
 <p>随机变量的联合概率与因子的乘积成比例，因此用Z归一化。Z为$\phi$函数乘积的所有状态的和或积分。</p>
-<p>$$<br>p(\mathbf{x})&#x3D;\frac{1}{Z} \prod _ {i} \phi^{(i)}\left(\mathcal{C}^{(i)}\right)<br>$$</p>
-<p><img src="http://tjunet.top/typecho/usr/upload/2020/04/2133901227.png" alt="7.png"></p>
-<p>$$<br>p(a, b, c, d, e)&#x3D;\frac{1}{Z} \phi^{(\mathbf{1})}(a, b,c) \phi^{(2)}(b, d) \phi^{(3)}(c, e)<br>$$</p>
-
+<script type="math/tex; mode=display">
+p(\mathbf{x})=\frac{1}{Z} \prod _ {i} \phi^{(i)}\left(\mathcal{C}^{(i)}\right)</script><p><img src="http://tjunet.top/typecho/usr/upload/2020/04/2133901227.png" alt="7.png"></p>
+<script type="math/tex; mode=display">
+p(a, b, c, d, e)=\frac{1}{Z} \phi^{(\mathbf{1})}(a, b,c) \phi^{(2)}(b, d) \phi^{(3)}(c, e)</script>
       
     </div>
     

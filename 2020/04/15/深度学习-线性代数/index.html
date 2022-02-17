@@ -356,138 +356,189 @@
       
 
       
-        <p>qwq</p>
-<span id="more"></span>
+        <p>qwq<br><span id="more"></span></p>
 <h1 id="标量、向量、矩阵和张量"><a href="#标量、向量、矩阵和张量" class="headerlink" title="标量、向量、矩阵和张量"></a>标量、向量、矩阵和张量</h1><ul>
 <li><p>标量 单独的数</p>
 </li>
-<li><p>向量：一列数<br>$$<br>\boldsymbol x&#x3D;\left[<br> \begin{matrix}<br>   x_1 \\<br>   x_2 \\<br>   x_3\\<br>   \vdots\\<br>   x_n<br>  \end{matrix}<br>  \right]<br>$$</p>
-<p>可以把向量看作空间中的点，每个元素是不同坐标轴上的坐标。</p>
-<p>索引：定义$S&#x3D;{ 1,3,6}$，$\boldsymbol x_S$指定$x_1,x_3,x_6$，—表示补集的索引，$\boldsymbol x_{—S}$表示$\boldsymbol x$中除$x_1,x_3,x_6$中的元素构成的向量。</p>
-</li>
+<li><p>向量：一列数</p>
+<script type="math/tex; mode=display">
+\boldsymbol x=\left[
+ \begin{matrix}
+   x_1 \\\\
+   x_2 \\\\
+   x_3\\\\
+   \vdots\\\\
+   x_n
+  \end{matrix}
+  \right]</script></li>
+</ul>
+<p>  可以把向量看作空间中的点，每个元素是不同坐标轴上的坐标。</p>
+<p>  索引：定义$S={ 1,3,6}$，$\boldsymbol x<em>S$指定$x_1,x_3,x_6$，—表示补集的索引，$\boldsymbol x</em>{—S}$表示$\boldsymbol x$中除$x_1,x_3,x_6$中的元素构成的向量。</p>
+<ul>
 <li><p>矩阵：二维数组</p>
 <p>索引：$A_{m,n}$</p>
-<p>$\boldsymbol A_{i,:}$表示$\boldsymbol A$ 的第$i$行，$\boldsymbol A_{:,i}$表示$\boldsymbol A$的第$i$列。</p>
-<p>$$<br>\left[<br> \begin{matrix}<br>   A_{1,1}&amp;A_{1,2} \\<br>   A_{2,1}&amp;A_{2,2} \\<br>  \end{matrix}<br>  \right]<br>$$</p>
-<p>$f(\boldsymbol A)_{i,j}$：$f$作用在$\boldsymbol A$上输出的矩阵的第i行第j列元素</p>
+<p>$\boldsymbol A<em>{i,:}$表示$\boldsymbol A$ 的第$i$行，$\boldsymbol A</em>{:,i}$表示$\boldsymbol A$的第$i$列。</p>
+<script type="math/tex; mode=display">
+\left[
+ \begin{matrix}
+   A_{1,1}&A_{1,2} \\\\
+   A_{2,1}&A_{2,2} \\\\
+  \end{matrix}
+  \right]</script><p>$f(\boldsymbol A)_{i,j}$：$f$作用在$\boldsymbol A$上输出的矩阵的第i行第j列元素</p>
 </li>
 <li><p>张量：超过二维的数组</p>
 </li>
 </ul>
 <p>转置：以对角线为轴的镜像</p>
-<p>$$<br>(\boldsymbol{A}^{T})_<br>{i, j}&#x3D;A_{j, i}<br>$$</p>
-<p>矩阵相加：$\boldsymbol D&#x3D;a\cdot \boldsymbol B+c$</p>
-<p>矩阵和向量相加：$\boldsymbol C&#x3D;\boldsymbol A+\boldsymbol b$，其中$C_{i,j}&#x3D;A_{i,j}+b_j$  (广播)</p>
-<h1 id="矩阵和向量相乘"><a href="#矩阵和向量相乘" class="headerlink" title="矩阵和向量相乘"></a>矩阵和向量相乘</h1><p>矩阵乘积：$\boldsymbol C&#x3D;\boldsymbol {AB}$</p>
+<script type="math/tex; mode=display">
+(\boldsymbol{A}^{T})_
+{i, j}=A_{j, i}</script><p>矩阵相加：$\boldsymbol D=a\cdot \boldsymbol B+c$</p>
+<p>矩阵和向量相加：$\boldsymbol C=\boldsymbol A+\boldsymbol b$，其中$C<em>{i,j}=A</em>{i,j}+b_j$  (广播)</p>
+<h1 id="矩阵和向量相乘"><a href="#矩阵和向量相乘" class="headerlink" title="矩阵和向量相乘"></a>矩阵和向量相乘</h1><p>矩阵乘积：$\boldsymbol C=\boldsymbol {AB}$</p>
 <p>元素对应乘积（Hadamard乘积）：$\boldsymbol A \odot \boldsymbol B$</p>
 <p>两个维数相同的向量$\boldsymbol x$和$\boldsymbol y$的点积可以看作矩阵乘积$\boldsymbol x^T \boldsymbol y$。因此矩阵乘积可以看作第$i$行第$j$列的点积。</p>
 <p>运算性质：</p>
-<p>​    分配律：$\boldsymbol A(\boldsymbol B+\boldsymbol C)&#x3D;\boldsymbol{AB}+\boldsymbol{AC}$</p>
-<p>​    结合律：$\boldsymbol A(\boldsymbol{BC})&#x3D;(\boldsymbol{AB})\boldsymbol C$</p>
+<p>​    分配律：$\boldsymbol A(\boldsymbol B+\boldsymbol C)=\boldsymbol{AB}+\boldsymbol{AC}$</p>
+<p>​    结合律：$\boldsymbol A(\boldsymbol{BC})=(\boldsymbol{AB})\boldsymbol C$</p>
 <p>​    不满足交换律。</p>
-<p>​    点积：$\boldsymbol x^{\top}\boldsymbol y&#x3D;\boldsymbol y^{\top}\boldsymbol x$</p>
-<p>​    转置：$(\boldsymbol{AB})^{\top}&#x3D;\boldsymbol {B^{\top}A^{\top}}$</p>
-<p>线性方程组：$\boldsymbol {Ax}&#x3D;\boldsymbol b$</p>
-<h1 id="单位矩阵和逆矩阵"><a href="#单位矩阵和逆矩阵" class="headerlink" title="单位矩阵和逆矩阵"></a>单位矩阵和逆矩阵</h1><p>单位矩阵 $\boldsymbol In$：任意向量和单位矩阵相乘都不会改变。<br>$$<br>\forall\boldsymbol x\in\mathbb{R}^n,\boldsymbol{I_nx}&#x3D;\boldsymbol x<br>$$<br>结构：<br>$$<br>\left[<br> \begin{matrix}<br>   1&amp;0&amp;0 \\<br>   0&amp;1&amp;0 \\<br>   0&amp;0&amp;1\\<br>  \end{matrix}<br>  \right]<br>$$</p>
-<p>矩阵逆：$\boldsymbol A^{-1}$</p>
-<p>$$<br>\boldsymbol {A^{-1}A}&#x3D;\boldsymbol I_n<br>$$</p>
-<p>逆矩阵主要作为理论工具使用，因为精度有限。</p>
-<h1 id="线性相关和生成子空间"><a href="#线性相关和生成子空间" class="headerlink" title="线性相关和生成子空间"></a>线性相关和生成子空间</h1><p>对于$\boldsymbol {Ax}&#x3D;\boldsymbol b$，如果有解，则一定存在一个解或无穷多解，不存在多余一个但少于无穷多解的情况。</p>
+<p>​    点积：$\boldsymbol x^{\top}\boldsymbol y=\boldsymbol y^{\top}\boldsymbol x$</p>
+<p>​    转置：$(\boldsymbol{AB})^{\top}=\boldsymbol {B^{\top}A^{\top}}$</p>
+<p>线性方程组：$\boldsymbol {Ax}=\boldsymbol b$</p>
+<h1 id="单位矩阵和逆矩阵"><a href="#单位矩阵和逆矩阵" class="headerlink" title="单位矩阵和逆矩阵"></a>单位矩阵和逆矩阵</h1><p>单位矩阵 $\boldsymbol In$：任意向量和单位矩阵相乘都不会改变。</p>
+<script type="math/tex; mode=display">
+\forall\boldsymbol x\in\mathbb{R}^n,\boldsymbol{I_nx}=\boldsymbol x</script><p>结构：</p>
+<script type="math/tex; mode=display">
+\left[
+ \begin{matrix}
+   1&0&0 \\\\
+   0&1&0 \\\\
+   0&0&1\\\\
+  \end{matrix}
+  \right]</script><p>矩阵逆：$\boldsymbol A^{-1}$</p>
+<script type="math/tex; mode=display">
+\boldsymbol {A^{-1}A}=\boldsymbol I_n</script><p>逆矩阵主要作为理论工具使用，因为精度有限。</p>
+<h1 id="线性相关和生成子空间"><a href="#线性相关和生成子空间" class="headerlink" title="线性相关和生成子空间"></a>线性相关和生成子空间</h1><p>对于$\boldsymbol {Ax}=\boldsymbol b$，如果有解，则一定存在一个解或无穷多解，不存在多余一个但少于无穷多解的情况。</p>
 <p>可以将$\boldsymbol A$的列向量看作从原点出发的不同方向，确定有多少种方法可以到达向量$\boldsymbol b$，向量$\boldsymbol x$表示沿这些方向走多远。</p>
-<p>线性组合：<br>$$<br>\boldsymbol {Ax}&#x3D;\sum_ix_i\boldsymbol A_{:,i}<br>$$</p>
-<p>生成子空间：原始向量线性组合后能达到的点的集合。</p>
+<p>线性组合：</p>
+<script type="math/tex; mode=display">
+\boldsymbol {Ax}=\sum_ix_i\boldsymbol A_{:,i}</script><p>生成子空间：原始向量线性组合后能达到的点的集合。</p>
 <p>列空间（值域）：某矩阵列向量的生成子空间。</p>
-<p>使$\boldsymbol {AX}&#x3D;\boldsymbol b$对于任意向量$b\in\mathbb{R}^m$都有解，要$\boldsymbol A$的列空间构成$\mathbb{R}^m$，则$\boldsymbol A$至少有m个线性无关的列，否则只有当向量$\boldsymbol b$在n维平面上时有解。</p>
+<p>使$\boldsymbol {AX}=\boldsymbol b$对于任意向量$b\in\mathbb{R}^m$都有解，要$\boldsymbol A$的列空间构成$\mathbb{R}^m$，则$\boldsymbol A$至少有m个线性无关的列，否则只有当向量$\boldsymbol b$在n维平面上时有解。</p>
 <p>若要矩阵可逆，还要保证对于每一个$\boldsymbol b$最多有一个解，因此矩阵最多有m个列向量。</p>
 <p>因此这个可逆的矩阵必须为方阵且所有向量为线性无关。</p>
 <p>奇异：列向量线性相关的方阵。</p>
-<p>$$\boldsymbol{A^{-1}A}&#x3D;\boldsymbol{AA^{-1}}&#x3D;\boldsymbol I$$</p>
-<h1 id="范数"><a href="#范数" class="headerlink" title="范数"></a>范数</h1><p>范数：衡量向量大小,表示从原点到点$\boldsymbol x$的距离。</p>
+<script type="math/tex; mode=display">\boldsymbol{A^{-1}A}=\boldsymbol{AA^{-1}}=\boldsymbol I</script><h1 id="范数"><a href="#范数" class="headerlink" title="范数"></a>范数</h1><p>范数：衡量向量大小,表示从原点到点$\boldsymbol x$的距离。</p>
 <p>$L^p$范数定义：</p>
-<p>$$<br>||\boldsymbol x||_p&#x3D;(\sum_i|x_i|^p)^{\frac 1p}<br>$$</p>
-<p>$L^2$范数：p&#x3D;2，欧几里得范数，$||\boldsymbol x||$，<strong>可以通过点积$\boldsymbol {x^Tx}$计算</strong>。</p>
-<p>$$<br>\boldsymbol{x^Ty}&#x3D;||\boldsymbol x||_2||\boldsymbol y||_2\cos\theta<br>$$</p>
-<p>平方$L^2$范数：对每个元素的倒数只取决于对应元素，而不平方会与整个向量相关但在原点附近增长缓慢。</p>
+<script type="math/tex; mode=display">
+||\boldsymbol x||_p=(\sum_i|x_i|^p)^{\frac 1p}</script><p>$L^2$范数：p=2，欧几里得范数，$||\boldsymbol x||$，<strong>可以通过点积$\boldsymbol {x^Tx}$计算</strong>。</p>
+<script type="math/tex; mode=display">
+\boldsymbol{x^Ty}=||\boldsymbol x||_2||\boldsymbol y||_2\cos\theta</script><p>平方$L^2$范数：对每个元素的倒数只取决于对应元素，而不平方会与整个向量相关但在原点附近增长缓慢。</p>
 <p>$L^1$范数：区分恰好是0的元素和接近于0的元素。表示非零元素数目。</p>
-<p>$$<br>||\boldsymbol x||_1&#x3D;\sum_i|x_i|<br>$$</p>
-<p>最大范数：表示向量中具有最大幅值的元素的绝对值。</p>
-<p>$$<br>||\boldsymbol x||_\infty&#x3D;\max_i|x_i|<br>$$</p>
-<p>Frobenius范数：衡量矩阵大小</p>
-<p>$$<br>||\boldsymbol A||_<br>F&#x3D;\sqrt{\sum_{i,j}A^2_{i,j},}<br>$$</p>
-<h1 id="特殊类型的矩阵和向量"><a href="#特殊类型的矩阵和向量" class="headerlink" title="特殊类型的矩阵和向量"></a>特殊类型的矩阵和向量</h1><p>对角矩阵：只在对角线上含有非零元素</p>
+<script type="math/tex; mode=display">
+||\boldsymbol x||_1=\sum_i|x_i|</script><p>最大范数：表示向量中具有最大幅值的元素的绝对值。</p>
+<script type="math/tex; mode=display">
+||\boldsymbol x||_\infty=\max_i|x_i|</script><p>Frobenius范数：衡量矩阵大小</p>
+<script type="math/tex; mode=display">
+||\boldsymbol A||_
+F=\sqrt{\sum_{i,j}A^2_{i,j},}</script><h1 id="特殊类型的矩阵和向量"><a href="#特殊类型的矩阵和向量" class="headerlink" title="特殊类型的矩阵和向量"></a>特殊类型的矩阵和向量</h1><p>对角矩阵：只在对角线上含有非零元素</p>
 <p>​    $diag(\boldsymbol v)$：对角元素由向量中元素构成</p>
 <p>对称矩阵：转置和自己相等</p>
 <p>单位向量：具有单位范数的向量</p>
-<p>$$<br>||\boldsymbol x||_ 2&#x3D;1<br>$$</p>
-<p>正交：$\boldsymbol {x^Ty}&#x3D;0$</p>
+<script type="math/tex; mode=display">
+||\boldsymbol x||_ 2=1</script><p>正交：$\boldsymbol {x^Ty}=0$</p>
 <p>标准正交：正交且范数为1</p>
 <p>正交矩阵：行向量和列向量分别标准正交的方阵，求逆代价小</p>
-<p>$$<br>\boldsymbol{A^TA}&#x3D;\boldsymbol{AA^T}&#x3D;\boldsymbol I\\<br>\boldsymbol{A^{-1}&#x3D;\boldsymbol{A^T}}<br>$$</p>
-<h1 id="特征分解"><a href="#特征分解" class="headerlink" title="特征分解"></a>特征分解</h1><p>特征分解：将矩阵分解成一组特征向量和特征值。</p>
+<script type="math/tex; mode=display">
+\boldsymbol{A^TA}=\boldsymbol{AA^T}=\boldsymbol I\\\\
+\boldsymbol{A^{-1}=\boldsymbol{A^T}}</script><h1 id="特征分解"><a href="#特征分解" class="headerlink" title="特征分解"></a>特征分解</h1><p>特征分解：将矩阵分解成一组特征向量和特征值。</p>
 <p>特征向量：</p>
-<p>$$<br>\boldsymbol {Av}&#x3D;\lambda\boldsymbol v<br>$$</p>
-<p>特征分解：</p>
-<p>$$<br>\boldsymbol A&#x3D;\boldsymbol Vdiag(\boldsymbol \lambda)\boldsymbol {V^{-1}}<br>$$</p>
-<p>其中$\boldsymbol V&#x3D;[v^{(1)},…,v^{(n)}]$，$\boldsymbol\lambda&#x3D;[\lambda_1,…,\lambda_n]$</p>
+<script type="math/tex; mode=display">
+\boldsymbol {Av}=\lambda\boldsymbol v</script><p>特征分解：</p>
+<script type="math/tex; mode=display">
+\boldsymbol A=\boldsymbol Vdiag(\boldsymbol \lambda)\boldsymbol {V^{-1}}</script><p>其中$\boldsymbol V=[v^{(1)},…,v^{(n)}]$，$\boldsymbol\lambda=[\lambda_1,…,\lambda_n]$</p>
 <p>每一个实对称矩阵都可以分解成实特征向量和实特征值：</p>
-<p>$$<br>\boldsymbol A&#x3D;\boldsymbol {Q\Lambda Q^T}<br>$$</p>
-<p>其中Q是A特征向量构成的正交矩阵，可以将A看作沿方向$\boldsymbol v^{(i)}$延伸$\lambda_i$倍的空间。</p>
+<script type="math/tex; mode=display">
+\boldsymbol A=\boldsymbol {Q\Lambda Q^T}</script><p>其中Q是A特征向量构成的正交矩阵，可以将A看作沿方向$\boldsymbol v^{(i)}$延伸$\lambda_i$倍的空间。</p>
 <p>矩阵是奇异的当且仅当含有0特征值。</p>
 <p><img src="/images/pasted-0.png" alt="这咋整啊"></p>
 <h1 id="奇异值分解"><a href="#奇异值分解" class="headerlink" title="奇异值分解"></a>奇异值分解</h1><p>奇异值分解（SVD）：奇异向量+奇异值</p>
 <p>每个实数矩阵都有一个奇异值分解，但不一定都有特征值分解。</p>
-<p>$$<br>\boldsymbol A&#x3D;\boldsymbol {UDV^T}<br>$$</p>
-<p>$\boldsymbol A:m\times n$</p>
+<script type="math/tex; mode=display">
+\boldsymbol A=\boldsymbol {UDV^T}</script><p>$\boldsymbol A:m\times n$</p>
 <p>$\boldsymbol U:m\times m$，正交矩阵，列向量为左奇异向量</p>
 <p>$\boldsymbol D:m\times n$，对角矩阵（不一定是方阵），对角线上元素为奇异值</p>
 <p>$\boldsymbol V:n\times n$，列向量为右奇异向量</p>
 <p>左奇异向量是$\boldsymbol {AA^T}$的特征向量，右奇异向量是$\boldsymbol {A^TA}$的特征向量，非零奇异值是$\boldsymbol {AA^T}$和$\boldsymbol {A^TA}$特征值的平方根。</p>
 <h1 id="Moore-Penrose-伪逆"><a href="#Moore-Penrose-伪逆" class="headerlink" title="Moore-Penrose 伪逆"></a>Moore-Penrose 伪逆</h1><p>对于非方阵，没有逆矩阵。</p>
-<p>$$<br>\boldsymbol A^+&#x3D;\boldsymbol {VD^+U^T}<br>$$</p>
-<p>其中，U,D和V是A奇异值分解后得到的矩阵，$D^+$是D非零元素取倒数之后再转置得到。</p>
-<p>当矩阵列数多于行数时，$x&#x3D;\boldsymbol A^+y$是方程中L2范数最小的一个。</p>
+<script type="math/tex; mode=display">
+\boldsymbol A^+=\boldsymbol {VD^+U^T}</script><p>其中，U,D和V是A奇异值分解后得到的矩阵，$D^+$是D非零元素取倒数之后再转置得到。</p>
+<p>当矩阵列数多于行数时，$x=\boldsymbol A^+y$是方程中L2范数最小的一个。</p>
 <p>当矩阵行数多于列数时，伪逆得到的x使得Ax和y的欧几里得距离$||\boldsymbol {Ax-y}||_<br>2$最小。</p>
-<h1 id="迹运算"><a href="#迹运算" class="headerlink" title="迹运算"></a>迹运算</h1><p>$$<br>Tr(\boldsymbol A)&#x3D;\sum_iA_{i,i}<br>$$</p>
-<p>Frobenius范数：</p>
-<p>$$<br>||\boldsymbol A||_ F&#x3D;\sqrt{\sum_{i,j}A^2_{i,j},}&#x3D;\sqrt{Tr(\boldsymbol{AA^T})}<br>$$</p>
-<p>转置前后迹不变</p>
+<h1 id="迹运算"><a href="#迹运算" class="headerlink" title="迹运算"></a>迹运算</h1><script type="math/tex; mode=display">
+Tr(\boldsymbol A)=\sum_iA_{i,i}</script><p>Frobenius范数：</p>
+<script type="math/tex; mode=display">
+||\boldsymbol A||_ F=\sqrt{\sum_{i,j}A^2_{i,j},}=\sqrt{Tr(\boldsymbol{AA^T})}</script><p>转置前后迹不变</p>
 <p>多个矩阵相乘得到方阵的迹，将最后一个挪到最前面之后迹不变。</p>
-<p>$$<br>Tr(\prod^n_{i&#x3D;1}\boldsymbol F^{(i)})&#x3D;Tr(\boldsymbol F^{(n)}\prod^{n-1}_ {i&#x3D;1}\boldsymbol F^{(i)})<br>$$</p>
-<p>对于标量：a&#x3D;Tr(a)。</p>
+<script type="math/tex; mode=display">
+Tr(\prod^n_{i=1}\boldsymbol F^{(i)})=Tr(\boldsymbol F^{(n)}\prod^{n-1}_ {i=1}\boldsymbol F^{(i)})</script><p>对于标量：a=Tr(a)。</p>
 <h1 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h1><p>行列式：$det(\boldsymbol A)$，将方阵映射到实数的函数。</p>
 <p>行列式等于矩阵特征值的乘积。</p>
 <p>行列式绝对值衡量矩阵参与矩阵乘法后空间扩大或缩小了。</p>
 <h1 id="主成分分析"><a href="#主成分分析" class="headerlink" title="主成分分析"></a>主成分分析</h1><p>主成分分析：PCA，对空间中的m个点进行有损压缩，希望损失的精度尽可能少。</p>
 <p>方法：用低维表示，即存在l小于n。</p>
-<p>找到一个编码函数，根据输入返回编码，$f(\boldsymbol x)&#x3D;c$，一个解码函数，给定编码重构输入，$\boldsymbol{x} \approx g(f(\boldsymbol{x}))$</p>
-<p>定义解码矩阵$\boldsymbol{D} \in \mathbb{R}^{n \times l}$，$g(\boldsymbol c)&#x3D;\boldsymbol{Dc}$</p>
+<p>找到一个编码函数，根据输入返回编码，$f(\boldsymbol x)=c$，一个解码函数，给定编码重构输入，$\boldsymbol{x} \approx g(f(\boldsymbol{x}))$</p>
+<p>定义解码矩阵$\boldsymbol{D} \in \mathbb{R}^{n \times l}$，$g(\boldsymbol c)=\boldsymbol{Dc}$</p>
 <p>限制$\boldsymbol D$的所有列向量具有单位范数且彼此正交。</p>
-<p>为得到最优编码 $\boldsymbol c^* $ ，最小化原始输入向量 $ \boldsymbol x $ 和重构向量 $ g(\boldsymbol c^* )$之间的距离，使用平方$L^2$范数：</p>
-<p>$$<br>c^{ * }&#x3D;\arg \min _ {c}|x-g(c)|_ {2}^{2}<br>$$</p>
-<p>最小化函数化简：</p>
-<p>$$<br>\begin{aligned}<br>&amp;(\boldsymbol x-g(\boldsymbol c))^{\top}(\boldsymbol x-g(\boldsymbol c))\\<br>&#x3D;&amp;\boldsymbol x^{\top} \boldsymbol x-\boldsymbol x^{\top} g(\boldsymbol c)-g(\boldsymbol c)^{\top} \boldsymbol x+g(\boldsymbol c)^{\top} g(\boldsymbol c)\\<br>&#x3D;&amp;\boldsymbol{x}^{\top} \boldsymbol{x}-2 \boldsymbol{x}^{\top} g(\boldsymbol{c})+g(\boldsymbol{c})^{\top} g(\boldsymbol{c})<br>\end{aligned}<br>$$</p>
-<p>其中标量$g(\boldsymbol c)^{\top} \boldsymbol x$的转置等于本身。</p>
+<p>为得到最优编码 $\boldsymbol c^<em> $ ，最小化原始输入向量 $ \boldsymbol x $ 和重构向量 $ g(\boldsymbol c^</em> )$之间的距离，使用平方$L^2$范数：</p>
+<script type="math/tex; mode=display">
+c^{ * }=\arg \min _ {c}\|x-g(c)\|_ {2}^{2}</script><p>最小化函数化简：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&(\boldsymbol x-g(\boldsymbol c))^{\top}(\boldsymbol x-g(\boldsymbol c))\\\\
+=&\boldsymbol x^{\top} \boldsymbol x-\boldsymbol x^{\top} g(\boldsymbol c)-g(\boldsymbol c)^{\top} \boldsymbol x+g(\boldsymbol c)^{\top} g(\boldsymbol c)\\\\
+=&\boldsymbol{x}^{\top} \boldsymbol{x}-2 \boldsymbol{x}^{\top} g(\boldsymbol{c})+g(\boldsymbol{c})^{\top} g(\boldsymbol{c})
+\end{aligned}</script><p>其中标量$g(\boldsymbol c)^{\top} \boldsymbol x$的转置等于本身。</p>
 <p>第一项不依赖于c，因此：</p>
-<p>$$<br>\begin{aligned}<br>\boldsymbol c^{ * }&amp;&#x3D;\underset{c}{\arg \min }-2 \boldsymbol{x}^{\top} g(\boldsymbol{c})+g(\boldsymbol{c})^{\top} g(\boldsymbol{c})\\<br>&amp;&#x3D;\underset{c}{\arg \min }-2 \boldsymbol x^{\top} \boldsymbol D \boldsymbol c+\boldsymbol c^{\top} \boldsymbol D^{\top} \boldsymbol D c \\<br>&amp;&#x3D;\underset{c}{\arg \min }-2\boldsymbol x^{\top}\boldsymbol D\boldsymbol c+\boldsymbol c^{\top} \boldsymbol I_{l} \boldsymbol c\\<br>&amp;&#x3D;\underset{c}{\arg \min }-2 \boldsymbol{x}^{\top} \boldsymbol{D} \boldsymbol{c}+\boldsymbol{c}^{\top} \boldsymbol{c}<br>\end{aligned}<br>$$</p>
-<p>通过向量微积分求解优化：</p>
-<p>$$<br>\begin{array}{c}<br>\nabla_{c}\left(-2 \boldsymbol{x}^{\top} \boldsymbol{D} \boldsymbol{c}+\boldsymbol{c}^{\top} \boldsymbol{c}\right)&#x3D;0 \\<br>-2 \boldsymbol{D}^{\top} \boldsymbol{x}+2 \boldsymbol{c}&#x3D;0 \\<br>\boldsymbol{c}&#x3D;\boldsymbol{D}^{\top} \boldsymbol{x}<br>\end{array}<br>$$</p>
-<p>因此使用编码函数：</p>
-<p>$$<br>f(\boldsymbol x)&#x3D;\boldsymbol D^{\top} \boldsymbol x<br>$$</p>
-<p>根据矩阵乘法定义PCA重构操作：</p>
-<p>$$<br>r(\boldsymbol{x})&#x3D;g(f(\boldsymbol{x}))&#x3D;\boldsymbol{D} \boldsymbol{D}^{\top} \boldsymbol{x}<br>$$</p>
-<p>挑选编码矩阵D，最小化所有维数和所有点上的误差矩阵的F范数：</p>
-<p>$$<br>\boldsymbol{D}^{ * }&#x3D;\underset{\boldsymbol{D}}{\arg \min } \sqrt{\sum_{i, j}\left(x_{j}^{(i)}-r\left(\boldsymbol{x}^{(i)}\right)_ {j}\right)^{2}} \text { subject to } \boldsymbol{D}^{\top} \boldsymbol{D}&#x3D;\boldsymbol{I}_ {l}<br>$$</p>
-<p>首先考虑$l&#x3D;1$，此时$\boldsymbol D$为向量$\boldsymbol d$：</p>
-<p>$$<br>\boldsymbol d^{* }&#x3D;\underset{\boldsymbol d}{\arg \min } \sum_{i}\left|\boldsymbol x^{(i)}-\boldsymbol d \boldsymbol d^{\top} \boldsymbol x^{(i)}\right|_ {2}^{2} \text { subject to }|\boldsymbol d|_ {2}&#x3D;1<br>$$</p>
-<p>将标量写在左边：</p>
-<p>$$<br>\begin{aligned}<br>\boldsymbol d^{* }&#x3D;\underset{\boldsymbol d}{\arg \min } \sum_ {i}\left|\boldsymbol x^{(i)}-\boldsymbol d^{\top} \boldsymbol x^{(i)} \boldsymbol d\right|_ {2}^{2} \text { subject to }|\boldsymbol d|_ {2}&#x3D;1\\<br>\boldsymbol d^{* }&#x3D;\underset{\boldsymbol d}{\arg \min } \sum_{i}\left|\boldsymbol x^{(i)}-\boldsymbol x^{(i) \top}\boldsymbol d\boldsymbol d\right|_ {2}^{2} \text { subject to }|\boldsymbol d|_ {2}&#x3D;1<br>\end{aligned}<br>$$</p>
-<p>用矩阵表示，$\boldsymbol{X} \in \mathbb{R}^{m \times n}$，其中$\boldsymbol{X}_{i, :}&#x3D;\boldsymbol{x}^{(i)^{\top}}$，因此：</p>
-<p>$$<br>\begin{aligned}<br>\boldsymbol d^{* }&#x3D;\underset{\boldsymbol d}{\arg \min }\left|\boldsymbol X-\boldsymbol {X d d^{\top}}\right|_ {F} ^{2} \text { subject to }\boldsymbol{ d^{\top} d}&#x3D;1<br>\end{aligned}<br>$$</p>
-<p>化简F范数：</p>
-<p>$$<br>\begin{aligned}&amp; \underset{\boldsymbol d}{\arg \min }\left|\boldsymbol{X}-\boldsymbol{X} \boldsymbol d \boldsymbol{d}^{\top}\right|_ {F}^{2} \\&#x3D;&amp;\underset{\boldsymbol d}{\arg \min } \operatorname{Tr}\left(\left(\boldsymbol{X}-\boldsymbol{X} \boldsymbol d \boldsymbol{d}^{\top}\right)^{\top}\left(\boldsymbol{X}-\boldsymbol{X} \boldsymbol d \boldsymbol{d}^{\top}\right)\right)\\&#x3D;&amp;\underset{\boldsymbol d}{\arg \min } \operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X}-\boldsymbol{X}^{\top} \boldsymbol{X} {\boldsymbol {d d^{\top}-d} }\boldsymbol{d}^{\top} \boldsymbol{X}^{\top} \boldsymbol{X}+\boldsymbol d \boldsymbol{d}^{\top} \boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol d \boldsymbol{d}^{\top}\right) \\&#x3D;&amp;\underset{\boldsymbol d}{\arg \min } \operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X}\right)-\operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol d \boldsymbol{d}^{\top}\right)-\operatorname{Tr}\left(\boldsymbol d \boldsymbol{d}^{\top} \boldsymbol{X}^{\top} \boldsymbol{X}\right)+\operatorname{Tr}\left(\boldsymbol d \boldsymbol{d}^{\top} \boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol d \boldsymbol{d}^{\top}\right) \\&#x3D;&amp;\underset{\boldsymbol d}{\arg \min }-\operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol d \boldsymbol{d}^{\top}\right)-\operatorname{Tr}\left(\boldsymbol d \boldsymbol{d}^{\top} \boldsymbol{X}^{\top} \boldsymbol{X}\right)+\operatorname{Tr}\left(\boldsymbol d \boldsymbol{d}^{\top} \boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol d \boldsymbol{d}^{\top}\right)\\&#x3D;&amp;\underset{\boldsymbol d}{\arg \min }-2 \operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d} \boldsymbol{d}^{\top}\right)+\operatorname{Tr}\left(\boldsymbol{d} \boldsymbol{d}^{\top} \boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d} \boldsymbol{d}^{\top}\right)\\&#x3D;&amp;\underset{\boldsymbol d}{\arg \min }-2 \operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d} \boldsymbol{d}^{\top}\right)+\operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d} \boldsymbol{d}^{\top} \boldsymbol{d} \boldsymbol{d}^{\top}\right)（循环改变迹运算中相乘矩阵的顺序不影响结果）\end{aligned}<br>$$</p>
-<p>考虑约束条件：</p>
-<p>$$<br>\begin{aligned}<br>&amp;\underset{\boldsymbol d}{\arg \min }-2 \operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d} \boldsymbol{d}^{\top}\right)+\operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d} \boldsymbol{d}^{\top} \boldsymbol{d} \boldsymbol{d}^{\top}\right) \text { subject to } \boldsymbol{d}^{\top} \boldsymbol{d}&#x3D;1\\<br>&#x3D;&amp;\underset{\boldsymbol d}{\arg \min }-2 \operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} d \boldsymbol{d}^{\top}\right)+\operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d} \boldsymbol{d}^{\top}\right) \text { subject to } \boldsymbol{d}^{\top} \boldsymbol{d}&#x3D;1\\<br>&#x3D;&amp;\underset{\boldsymbol d}{\arg \min }-\operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d} \boldsymbol{d}^{\top}\right) \text { subject to } \boldsymbol{d}^{\top} \boldsymbol{d}&#x3D;1\\<br>&#x3D;&amp;\underset{\boldsymbol d}{\arg \max } \operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d} \boldsymbol{d}^{\top}\right) \text { subject to } \boldsymbol{d}^{\top} \boldsymbol{d}&#x3D;1\\<br>&#x3D;&amp;\underset{\boldsymbol d}{\arg \max } \operatorname{Tr}\left(\boldsymbol{d}^{\top} \boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d}\right) \text { subject to } \boldsymbol{d}^{\top} \boldsymbol{d}&#x3D;1<br>\end{aligned}<br>$$</p>
-<p>因此最优的$\boldsymbol d$是$\boldsymbol{X^{\top}X}$最大的特征值对应的特征向量。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\boldsymbol c^{ * }&=\underset{c}{\arg \min }-2 \boldsymbol{x}^{\top} g(\boldsymbol{c})+g(\boldsymbol{c})^{\top} g(\boldsymbol{c})\\\\
+&=\underset{c}{\arg \min }-2 \boldsymbol x^{\top} \boldsymbol D \boldsymbol c+\boldsymbol c^{\top} \boldsymbol D^{\top} \boldsymbol D c \\\\
+&=\underset{c}{\arg \min }-2\boldsymbol x^{\top}\boldsymbol D\boldsymbol c+\boldsymbol c^{\top} \boldsymbol I_{l} \boldsymbol c\\\\
+&=\underset{c}{\arg \min }-2 \boldsymbol{x}^{\top} \boldsymbol{D} \boldsymbol{c}+\boldsymbol{c}^{\top} \boldsymbol{c}
+\end{aligned}</script><p>通过向量微积分求解优化：</p>
+<script type="math/tex; mode=display">
+\begin{array}{c}
+\nabla_{c}\left(-2 \boldsymbol{x}^{\top} \boldsymbol{D} \boldsymbol{c}+\boldsymbol{c}^{\top} \boldsymbol{c}\right)=0 \\\\
+-2 \boldsymbol{D}^{\top} \boldsymbol{x}+2 \boldsymbol{c}=0 \\\\
+\boldsymbol{c}=\boldsymbol{D}^{\top} \boldsymbol{x}
+\end{array}</script><p>因此使用编码函数：</p>
+<script type="math/tex; mode=display">
+f(\boldsymbol x)=\boldsymbol D^{\top} \boldsymbol x</script><p>根据矩阵乘法定义PCA重构操作：</p>
+<script type="math/tex; mode=display">
+r(\boldsymbol{x})=g(f(\boldsymbol{x}))=\boldsymbol{D} \boldsymbol{D}^{\top} \boldsymbol{x}</script><p>挑选编码矩阵D，最小化所有维数和所有点上的误差矩阵的F范数：</p>
+<script type="math/tex; mode=display">
+\boldsymbol{D}^{ * }=\underset{\boldsymbol{D}}{\arg \min } \sqrt{\sum_{i, j}\left(x_{j}^{(i)}-r\left(\boldsymbol{x}^{(i)}\right)_ {j}\right)^{2}} \text { subject to } \boldsymbol{D}^{\top} \boldsymbol{D}=\boldsymbol{I}_ {l}</script><p>首先考虑$l=1$，此时$\boldsymbol D$为向量$\boldsymbol d$：</p>
+<script type="math/tex; mode=display">
+\boldsymbol d^{* }=\underset{\boldsymbol d}{\arg \min } \sum_{i}\left\|\boldsymbol x^{(i)}-\boldsymbol d \boldsymbol d^{\top} \boldsymbol x^{(i)}\right\|_ {2}^{2} \text { subject to }\|\boldsymbol d\|_ {2}=1</script><p>将标量写在左边：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\boldsymbol d^{* }=\underset{\boldsymbol d}{\arg \min } \sum_ {i}\left\|\boldsymbol x^{(i)}-\boldsymbol d^{\top} \boldsymbol x^{(i)} \boldsymbol d\right\|_ {2}^{2} \text { subject to }\|\boldsymbol d\|_ {2}=1\\\\
+\boldsymbol d^{* }=\underset{\boldsymbol d}{\arg \min } \sum_{i}\left\|\boldsymbol x^{(i)}-\boldsymbol x^{(i) \top}\boldsymbol d\boldsymbol d\right\|_ {2}^{2} \text { subject to }\|\boldsymbol d\|_ {2}=1
+\end{aligned}</script><p>用矩阵表示，$\boldsymbol{X} \in \mathbb{R}^{m \times n}$，其中$\boldsymbol{X}_{i, :}=\boldsymbol{x}^{(i)^{\top}}$，因此：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\boldsymbol d^{* }=\underset{\boldsymbol d}{\arg \min }\left\|\boldsymbol X-\boldsymbol {X d d^{\top}}\right\|_ {F} ^{2} \text { subject to }\boldsymbol{ d^{\top} d}=1
+\end{aligned}</script><p>化简F范数：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}& \underset{\boldsymbol d}{\arg \min }\left\|\boldsymbol{X}-\boldsymbol{X} \boldsymbol d \boldsymbol{d}^{\top}\right\|_ {F}^{2} \\\\=&\underset{\boldsymbol d}{\arg \min } \operatorname{Tr}\left(\left(\boldsymbol{X}-\boldsymbol{X} \boldsymbol d \boldsymbol{d}^{\top}\right)^{\top}\left(\boldsymbol{X}-\boldsymbol{X} \boldsymbol d \boldsymbol{d}^{\top}\right)\right)\\\\=&\underset{\boldsymbol d}{\arg \min } \operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X}-\boldsymbol{X}^{\top} \boldsymbol{X} {\boldsymbol {d d^{\top}-d} }\boldsymbol{d}^{\top} \boldsymbol{X}^{\top} \boldsymbol{X}+\boldsymbol d \boldsymbol{d}^{\top} \boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol d \boldsymbol{d}^{\top}\right) \\\\=&\underset{\boldsymbol d}{\arg \min } \operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X}\right)-\operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol d \boldsymbol{d}^{\top}\right)-\operatorname{Tr}\left(\boldsymbol d \boldsymbol{d}^{\top} \boldsymbol{X}^{\top} \boldsymbol{X}\right)+\operatorname{Tr}\left(\boldsymbol d \boldsymbol{d}^{\top} \boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol d \boldsymbol{d}^{\top}\right) \\\\=&\underset{\boldsymbol d}{\arg \min }-\operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol d \boldsymbol{d}^{\top}\right)-\operatorname{Tr}\left(\boldsymbol d \boldsymbol{d}^{\top} \boldsymbol{X}^{\top} \boldsymbol{X}\right)+\operatorname{Tr}\left(\boldsymbol d \boldsymbol{d}^{\top} \boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol d \boldsymbol{d}^{\top}\right)\\\\=&\underset{\boldsymbol d}{\arg \min }-2 \operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d} \boldsymbol{d}^{\top}\right)+\operatorname{Tr}\left(\boldsymbol{d} \boldsymbol{d}^{\top} \boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d} \boldsymbol{d}^{\top}\right)\\\\=&\underset{\boldsymbol d}{\arg \min }-2 \operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d} \boldsymbol{d}^{\top}\right)+\operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d} \boldsymbol{d}^{\top} \boldsymbol{d} \boldsymbol{d}^{\top}\right)（循环改变迹运算中相乘矩阵的顺序不影响结果）\end{aligned}</script><p>考虑约束条件：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\underset{\boldsymbol d}{\arg \min }-2 \operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d} \boldsymbol{d}^{\top}\right)+\operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d} \boldsymbol{d}^{\top} \boldsymbol{d} \boldsymbol{d}^{\top}\right) \text { subject to } \boldsymbol{d}^{\top} \boldsymbol{d}=1\\\\
+=&\underset{\boldsymbol d}{\arg \min }-2 \operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} d \boldsymbol{d}^{\top}\right)+\operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d} \boldsymbol{d}^{\top}\right) \text { subject to } \boldsymbol{d}^{\top} \boldsymbol{d}=1\\\\
+=&\underset{\boldsymbol d}{\arg \min }-\operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d} \boldsymbol{d}^{\top}\right) \text { subject to } \boldsymbol{d}^{\top} \boldsymbol{d}=1\\\\
+=&\underset{\boldsymbol d}{\arg \max } \operatorname{Tr}\left(\boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d} \boldsymbol{d}^{\top}\right) \text { subject to } \boldsymbol{d}^{\top} \boldsymbol{d}=1\\\\
+=&\underset{\boldsymbol d}{\arg \max } \operatorname{Tr}\left(\boldsymbol{d}^{\top} \boldsymbol{X}^{\top} \boldsymbol{X} \boldsymbol{d}\right) \text { subject to } \boldsymbol{d}^{\top} \boldsymbol{d}=1
+\end{aligned}</script><p>因此最优的$\boldsymbol d$是$\boldsymbol{X^{\top}X}$最大的特征值对应的特征向量。</p>
 
       
     </div>

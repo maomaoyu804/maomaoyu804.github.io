@@ -363,9 +363,8 @@
 <li>VGG网络实现</li>
 </ul>
 <span id="more"></span>
-
-<h1 id="VGG网络基本原理"><a href="#VGG网络基本原理" class="headerlink" title="VGG网络基本原理"></a>VGG网络基本原理</h1><h2 id="感受野"><a href="#感受野" class="headerlink" title="感受野"></a>感受野</h2><p>感受野：卷积神经网络中，决定某一层输出结果中一个元素所对应的输入层的区域大小<br>计算方法：F(i) &#x3D; (F(i + 1) - 1) * Stride + Ksize<br>   F(i):第i层感受野<br>   Stride:第i层步距<br>   Ksize:卷积核或池化核尺寸<br><img src="/images/pasted-11.png" alt="图丢了qwq"></p>
-<h2 id="网络亮点"><a href="#网络亮点" class="headerlink" title="网络亮点"></a>网络亮点</h2><p>堆叠多个3 * 3卷积核代替大尺度卷积核（拥有相同感受野），以减少所需参数<br>堆叠两个3 * 3卷积核代替5 * 5卷积核，三个3 * 3卷积核代替7 * 7卷积核</p>
+<h1 id="VGG网络基本原理"><a href="#VGG网络基本原理" class="headerlink" title="VGG网络基本原理"></a>VGG网络基本原理</h1><h2 id="感受野"><a href="#感受野" class="headerlink" title="感受野"></a>感受野</h2><p>感受野：卷积神经网络中，决定某一层输出结果中一个元素所对应的输入层的区域大小<br>计算方法：F(i) = (F(i + 1) - 1) * Stride + Ksize<br>   F(i):第i层感受野<br>   Stride:第i层步距<br>   Ksize:卷积核或池化核尺寸<br><img src="/images/pasted-11.png" alt="图丢了qwq"></p>
+<h2 id="网络亮点"><a href="#网络亮点" class="headerlink" title="网络亮点"></a>网络亮点</h2><p>堆叠多个3 <em> 3卷积核代替大尺度卷积核（拥有相同感受野），以减少所需参数<br>堆叠两个3 </em> 3卷积核代替5 <em> 5卷积核，三个3 </em> 3卷积核代替7 * 7卷积核</p>
 <h2 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h2><p>Conv的Stride为1，padding为1；maxpool的size为2，stride为2。<br><img src="/images/pasted-12.png" alt="图丢了qwq"></p>
 <h1 id="VGG网络实现"><a href="#VGG网络实现" class="headerlink" title="VGG网络实现"></a>VGG网络实现</h1>
       
