@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="windows迁移至mac，遇到了无数bug，简单记录一下。   迁移环境：  windows10 -&gt; macOS Big Sur hexo v3.9.0 -&gt; v6.0.0 NexT.Pisces v7.3.0 -&gt; v5.1.4">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客搬家笔记">
+<meta property="og:url" content="http://maomaoyu804.github.io/2022/02/17/%E5%8D%9A%E5%AE%A2%E6%90%AC%E5%AE%B6%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="毛毛雨">
+<meta property="og:description" content="windows迁移至mac，遇到了无数bug，简单记录一下。   迁移环境：  windows10 -&gt; macOS Big Sur hexo v3.9.0 -&gt; v6.0.0 NexT.Pisces v7.3.0 -&gt; v5.1.4">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-02-17T15:02:21.000Z">
+<meta property="article:modified_time" content="2022-02-17T15:17:05.347Z">
+<meta property="article:author" content="毛毛雨 &#x3D;)">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://maomaoyu804.github.io/2022/02/17/博客搬家笔记/"/>
+
+
+
+
+
+  <title>博客搬家笔记 | 毛毛雨</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">毛毛雨</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">(^_−)−☆</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2022/02/17/%E5%8D%9A%E5%AE%A2%E6%90%AC%E5%AE%B6%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="毛毛雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">博客搬家笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-02-17T23:02:21+08:00">
+                2022-02-17
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2022-02-17T23:17:05+08:00">
+                2022-02-17
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>windows迁移至mac，遇到了无数bug，简单记录一下。  </p>
+<p>迁移环境：</p>
+<ul>
+<li>windows10 -&gt; macOS Big Sur</li>
+<li>hexo v3.9.0 -&gt; v6.0.0</li>
+<li>NexT.Pisces v7.3.0 -&gt; v5.1.4</li>
+</ul>
+<span id="more"></span>
+<h1 id="一、mac搭建本地环境"><a href="#一、mac搭建本地环境" class="headerlink" title="一、mac搭建本地环境"></a>一、mac搭建本地环境</h1><p>本部分参考博客：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c3b6e7f84321">https://www.jianshu.com/p/c3b6e7f84321</a></p>
+<h2 id="1-环境安装"><a href="#1-环境安装" class="headerlink" title="1. 环境安装"></a>1. 环境安装</h2><p>git和node.js<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br><span class="line">brew install node</span><br></pre></td></tr></table></figure><br>hexo</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 安装hexo</span><br><span class="line">npm install hexo-cli -g</span><br><span class="line"></span><br><span class="line"># 初始化hexo目录</span><br><span class="line">mkdir blog</span><br><span class="line">cd blog</span><br><span class="line"></span><br><span class="line"># 新建hexo服务</span><br><span class="line">hexo init</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>打开 <code>localhost:4000</code>查看是否成功</p>
+<h2 id="2-ssh密钥设置"><a href="#2-ssh密钥设置" class="headerlink" title="2. ssh密钥设置"></a>2. ssh密钥设置</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查看本地密钥</span><br><span class="line">cd ~/.<span class="property">ssh</span></span><br><span class="line"></span><br><span class="line"># 如果没有就生成</span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;example@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+<p>之后复制 <code>~/.ssh/id_rsa.pub</code>里面的内容到GitHub个人主页的Settings -&gt; SSH and GPG keys→New SSH key，并点击确认邮件</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 测试连接</span><br><span class="line">ssh git@github.<span class="property">com</span></span><br><span class="line"></span><br><span class="line">#这里要等很长时间并且选yes，被坑了很久……</span><br><span class="line">tina@<span class="title class_">TinadeMBP</span> .<span class="property">ssh</span> % ssh git@github.<span class="property">com</span></span><br><span class="line"><span class="title class_">The</span> authenticity <span class="keyword">of</span> host <span class="string">&#x27;github.com (127.0.0.1)&#x27;</span> can<span class="string">&#x27;t be established.</span></span><br><span class="line"><span class="string">ECDSA key fingerprint is SHA256:p2QAMXNIC1TJYWeIOttrVc98/R1BUFWu3/LiyKgUfQM.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes</span></span><br><span class="line"><span class="string">Warning: Permanently added &#x27;</span>github.<span class="property">com</span><span class="string">&#x27; (ECDSA) to the list of known hosts.</span></span><br><span class="line"><span class="string">PTY allocation request failed on channel 0</span></span><br><span class="line"><span class="string">Hi maomaoyu804! You&#x27;</span>ve successfully authenticated, but <span class="title class_">GitHub</span> does not provide shell access.</span><br><span class="line"><span class="title class_">Connection</span> to github.<span class="property">com</span> closed.</span><br></pre></td></tr></table></figure>
+<h2 id="3-设置个人信息"><a href="#3-设置个人信息" class="headerlink" title="3. 设置个人信息"></a>3. 设置个人信息</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --<span class="variable language_">global</span> user.<span class="property">name</span> <span class="string">&quot;yourname”</span></span><br><span class="line"><span class="string">git config --global user.email youremail@example.com</span></span><br></pre></td></tr></table></figure>
+<h1 id="二、搬一下之前的文件"><a href="#二、搬一下之前的文件" class="headerlink" title="二、搬一下之前的文件"></a>二、搬一下之前的文件</h1><p>站点根目录需要替换的内容：<br>_config.yml、scaffolds、source、themes、public<br><strong>坑1</strong>：我的hexo+next版本太久了，导致搬过来后部分内容显示有问题，所以直接使用旧版本的config可能有一些锅，建议重新配一下config，orz……具体的一堆坑下文会提到。<br>不过不是很确定是不是必须更新，毕竟有亿点点麻烦……</p>
+<h1 id="三、启动"><a href="#三、启动" class="headerlink" title="三、启动"></a>三、启动</h1><h2 id="1-尝试启动"><a href="#1-尝试启动" class="headerlink" title="1. 尝试启动"></a>1. 尝试启动</h2><p>此时用的还是旧版本hexo</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p><strong>坑2</strong>：启动不起来</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">err</span>: <span class="title class_">Error</span>: <span class="title class_">Cannot</span> find <span class="variable language_">module</span> xxx</span><br></pre></td></tr></table></figure>
+<p>解决办法：缺什么装什么</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install cheerio --save</span><br></pre></td></tr></table></figure>
+<p>参考博客：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c3b6e7f84321">https://www.jianshu.com/p/c3b6e7f84321</a></p>
+<p><strong>坑3</strong>：启动成功后，并没有显示网站，而是如下内容：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">extends</span> ‘_layout.<span class="property">swig</span>‘ %&#125; &#123;% <span class="keyword">import</span> ‘_macro/post.<span class="property">swig</span>‘ <span class="keyword">as</span> post_template %&#125;</span><br></pre></td></tr></table></figure>
+<p>解决办法：hexo在5.0后把swig删除，需要自己安装</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-renderer-swig</span><br></pre></td></tr></table></figure>
+<p>参考博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39898645/article/details/109181736">https://blog.csdn.net/qq_39898645/article/details/109181736</a></p>
+<h2 id="2-启动后"><a href="#2-启动后" class="headerlink" title="2. 启动后"></a>2. 启动后</h2><p>启动成功后，归档等标签图标无法正常解析，查博客说是版本太久了无法正常解析……<br>于是我走上了更新NexT的不归路……<br>参考博客：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/02a8be67b391">https://www.jianshu.com/p/02a8be67b391</a></p>
+<h1 id="四、重新配置config"><a href="#四、重新配置config" class="headerlink" title="四、重新配置config"></a>四、重新配置config</h1><p>NexT官网：<a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/getting-started.html">http://theme-next.iissnan.com/getting-started.html</a><br>大体上照着原来的博客配就可以。<br><strong>坑4</strong>：在点击首页或者归档等位置时出现</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Cannot</span> <span class="variable constant_">GET</span> /tags/%<span class="number">20</span>/</span><br></pre></td></tr></table></figure>
+<p>找到主题配置文件的menu位置，把||前面的空格删掉：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu</span>:</span><br><span class="line">  <span class="attr">home</span>: /||home</span><br><span class="line">  #<span class="attr">about</span>: <span class="regexp">/about/</span>||user</span><br><span class="line">  #<span class="attr">tags</span>: <span class="regexp">/tags/</span> || tags</span><br><span class="line">  #<span class="attr">categories</span>: <span class="regexp">/categories/</span> || th</span><br><span class="line">  <span class="attr">archives</span>: <span class="regexp">/archives/</span>||archive</span><br><span class="line">  #<span class="attr">schedule</span>: <span class="regexp">/schedule/</span> || calendar</span><br><span class="line">  #<span class="attr">sitemap</span>: /sitemap.<span class="property">xml</span> || sitemap</span><br><span class="line">  #<span class="attr">commonweal</span>: <span class="regexp">/404/</span> || heartbeat</span><br></pre></td></tr></table></figure>
+<p>这个坑解决了orz<br><strong>坑5</strong>：点击头像下面的日志会出现跟刚刚很像的问题</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cannot get archives%7C%7C%20archive</span><br></pre></td></tr></table></figure>
+<p>于是尝试把刚刚位置的||及后面都删掉，发现字前面的图标没了……<br>解决方法：在<code>themes/next/layout/_macro/sidebar.swig</code>中：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 找到</span><br><span class="line">&lt;a href=<span class="string">&quot;&#123;&#123; url_for(theme.menu.archives).split(&#x27;||&#x27;)[0] | trim &#125;&#125;&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line"># 修改为</span><br><span class="line">&lt;a href=<span class="string">&quot;&#123;&#123; url_for(theme.menu.archives[0].path) &#125;&#125;&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>参考博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44852901/article/details/122817214">https://blog.csdn.net/qq_44852901/article/details/122817214</a>（好厉害啊orz……</p>
+<p>自闭了，吃饭。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/02/17/%E5%A7%97%E5%A7%97%E6%9D%A5%E8%BF%9F%E7%9A%84%E9%80%80%E5%BD%B9%E8%B4%B4/" rel="next" title="姗姗来迟的退役贴">
+                <i class="fa fa-chevron-left"></i> 姗姗来迟的退役贴
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/header.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://zzy991212.github.io/" title="zzy" target="_blank">zzy</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="blog.kongjune.com" title="KONGJUNE" target="_blank">KONGJUNE</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="www.zhouwk.club" title="zhouwk" target="_blank">zhouwk</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/conver/" title="conver" target="_blank">conver</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://vincentxwd.github.io/blog/" title="Kirai" target="_blank">Kirai</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81mac%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">一、mac搭建本地环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">1. 环境安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-ssh%E5%AF%86%E9%92%A5%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.2.</span> <span class="nav-text">2. ssh密钥设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%AE%BE%E7%BD%AE%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF"><span class="nav-number">1.3.</span> <span class="nav-text">3. 设置个人信息</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%90%AC%E4%B8%80%E4%B8%8B%E4%B9%8B%E5%89%8D%E7%9A%84%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">二、搬一下之前的文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%90%AF%E5%8A%A8"><span class="nav-number">3.</span> <span class="nav-text">三、启动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%B0%9D%E8%AF%95%E5%90%AF%E5%8A%A8"><span class="nav-number">3.1.</span> <span class="nav-text">1. 尝试启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%90%AF%E5%8A%A8%E5%90%8E"><span class="nav-number">3.2.</span> <span class="nav-text">2. 启动后</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEconfig"><span class="nav-number">4.</span> <span class="nav-text">四、重新配置config</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">毛毛雨 =)</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

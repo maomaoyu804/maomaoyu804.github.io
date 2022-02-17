@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="树剖，树剖好吃吗？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树链剖分 洛谷P3384模板题">
+<meta property="og:url" content="http://maomaoyu804.github.io/2019/08/14/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86-%E6%B4%9B%E8%B0%B7P3384%E6%A8%A1%E6%9D%BF%E9%A2%98/index.html">
+<meta property="og:site_name" content="毛毛雨">
+<meta property="og:description" content="树剖，树剖好吃吗？">
+<meta property="og:locale">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1397737/201805/1397737-20180510123640544-303874904.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1397737/201805/1397737-20180510124458843-1858715148.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1397737/201805/1397737-20180510124617970-666005311.png">
+<meta property="article:published_time" content="2019-08-14T02:30:23.000Z">
+<meta property="article:modified_time" content="2020-04-28T13:08:58.000Z">
+<meta property="article:author" content="毛毛雨 &#x3D;)">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images2018.cnblogs.com/blog/1397737/201805/1397737-20180510123640544-303874904.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://maomaoyu804.github.io/2019/08/14/树链剖分-洛谷P3384模板题/"/>
+
+
+
+
+
+  <title>树链剖分 洛谷P3384模板题 | 毛毛雨</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">毛毛雨</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">(^_−)−☆</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://maomaoyu804.github.io/2019/08/14/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86-%E6%B4%9B%E8%B0%B7P3384%E6%A8%A1%E6%9D%BF%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="毛毛雨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">树链剖分 洛谷P3384模板题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-14T10:30:23+08:00">
+                2019-08-14
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-04-28T21:08:58+08:00">
+                2020-04-28
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>树剖，树剖好吃吗？</p>
+<span id="more"></span>
+<h1 id="这里是树链剖分"><a href="#这里是树链剖分" class="headerlink" title="这里是树链剖分"></a>这里是树链剖分</h1><p>小菜鸡在长时间划水之后终于似乎看懂了树链剖分(⁄ ⁄•⁄ω⁄•⁄ ⁄)<br>部分转自 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/ivanovcraft/p/9019090.html">ivanovcraft带师</a> 和 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/10524122?fr=aladdin">百度百科</a>。</p>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>（悄悄说）之前看了好多好多博客，大概只是知道树链剖分的实现，但并不了解树链剖分存在的意义……<br>（继续悄悄说）所以毛毛雨去查了一下百度百科(⁄ ⁄•⁄ω⁄•⁄ ⁄)，感觉百度百科简直是良心定义！！  </p>
+<p>以下内容摘自百度百科  </p>
+<blockquote>
+<ul>
+<li>树路径信息维护算法。  </li>
+<li>将一棵树划分成若干条链，用数据结构（树状数组、BST、SPLAY、线段树等）去维护每条链，<br>复杂度为O(logN)。  </li>
+<li>其实本质是一些数据结构&#x2F;算法在树上的推广</li>
+</ul>
+</blockquote>
+<p>以后数据结构不仅仅可以维护线段，还可以用来维护树啦！！<br>（有点像从一维升级成二维了诶！）  </p>
+<h2 id="一些基本定义"><a href="#一些基本定义" class="headerlink" title="一些基本定义"></a>一些基本定义</h2><ul>
+<li>重结点：子树结点数目最多的结点；</li>
+<li>轻节点：父亲节点中除了重结点以外的结点；</li>
+<li>重边：父亲结点和重结点连成的边；</li>
+<li>轻边：父亲节点和轻节点连成的边；</li>
+<li>重链：由多条重边连接而成的路径；</li>
+<li>轻链：由多条轻边连接而成的路径；</li>
+</ul>
+<p><img src="https://images2018.cnblogs.com/blog/1397737/201805/1397737-20180510123640544-303874904.png"><br>如图加粗的链为重链，标红点的为重链起点（即下文的top值）。<br>下面是个人理解（溜）：重链为最长链，所有节点都能跳到重链上，并且跳的次数最少。其实随便选链进行剖分也是可以的，但选重链是最方便的~<br>然后有一些奇奇怪怪的性质：</p>
+<ul>
+<li>轻边(u,v)，size(v)&lt;&#x3D;size(u)&#x2F;2。 </li>
+<li>从根到某一点的路径上，不超过O(logN)条轻边，不超过O(logN)条重路径。</li>
+</ul>
+<h2 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>要实现树链剖分，要记录下面的值</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>f[u]</td>
+<td>保存结点u的父亲节点</td>
+</tr>
+<tr>
+<td>d[u]</td>
+<td>保存结点u的深度值</td>
+</tr>
+<tr>
+<td>size[u]</td>
+<td>保存以u为根的子树节点个数</td>
+</tr>
+<tr>
+<td>son[u]</td>
+<td>保存重儿子</td>
+</tr>
+<tr>
+<td>rk[u]</td>
+<td>保存当前dfs标号在树中所对应的节点</td>
+</tr>
+<tr>
+<td>top[u]</td>
+<td>保存当前节点所在链的顶端节点</td>
+</tr>
+<tr>
+<td>id[u]</td>
+<td>保存树中每个节点剖分以后的新编号（DFS的执行顺序）</td>
+</tr>
+</tbody></table>
+<h3 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h3><p>实现方式是进行两遍dfs<br>第一遍：</p>
+<ul>
+<li>对于一个点，求出他所在子树大小，并找到它的重儿子（size、son数组）</li>
+<li>记录它的父亲及深度（f、d数组）<br><img src="https://images2018.cnblogs.com/blog/1397737/201805/1397737-20180510124458843-1858715148.png"></li>
+</ul>
+<p>第二遍：  </p>
+<ul>
+<li>连接重链，同时标记每一个节点的dfs序，并且为了用数据结构来维护重链，我们在dfs时保证一条重链上各个节点dfs序连续（即处理出数组top,id,rk）<br><img src="https://images2018.cnblogs.com/blog/1397737/201805/1397737-20180510124617970-666005311.png"></li>
+</ul>
+<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><ul>
+<li>如果两点位于不同重链，则将深度大的节点跳到所在重链顶端，并用数据结构维护这条重链的信息，然后沿轻链跳到当前节点的父亲节点。</li>
+<li>如果两点位于同一重链，则统计这两点之间的信息。</li>
+</ul>
+<h1 id="然后一起来看题目鸭！"><a href="#然后一起来看题目鸭！" class="headerlink" title="然后一起来看题目鸭！"></a>然后一起来看题目鸭！</h1><p>下面是愉快的贴代码部分啦QWQ<br>题目是洛谷p3384 树链剖分模板题。<a target="_blank" rel="noopener" href="https://www.luogu.org/problem/P3384">题目在这里！</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> ll maxn=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">edge</span>&#123;</span><br><span class="line">    ll next,to;</span><br><span class="line">&#125;e[maxn*<span class="number">2</span>];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">    ll l,r,ls,rs,sum,lazy;</span><br><span class="line">&#125;a[maxn*<span class="number">2</span>];</span><br><span class="line">ll n,m,r,rt,mod,v[maxn],head[maxn],cnt,f[maxn],d[maxn],son[maxn],size[maxn],top[maxn],id[maxn],rk[maxn];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(ll x,ll y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[++cnt].next=head[x];</span><br><span class="line">    e[cnt].to=y;</span><br><span class="line">    head[x]=cnt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs1</span><span class="params">(ll u,ll fa,ll depth)</span>    <span class="comment">//当前节点、父节点、层次深度</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    f[u]=fa;</span><br><span class="line">    d[u]=depth;</span><br><span class="line">    size[u]=<span class="number">1</span>;    <span class="comment">//这个点本身size=1</span></span><br><span class="line">    <span class="keyword">for</span>(ll i=head[u];i;i=e[i].next)</span><br><span class="line">    &#123;</span><br><span class="line">        ll v=e[i].to;</span><br><span class="line">        <span class="keyword">if</span>(v==fa)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="built_in">dfs1</span>(v,u,depth+<span class="number">1</span>);    <span class="comment">//层次深度+1</span></span><br><span class="line">        size[u]+=size[v];    <span class="comment">//子节点的size已被处理，用它来更新父节点的size</span></span><br><span class="line">        <span class="keyword">if</span>(size[v]&gt;size[son[u]])</span><br><span class="line">            son[u]=v;    <span class="comment">//选取size最大的作为重儿子</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs2</span><span class="params">(ll u,ll t)</span>    <span class="comment">//当前节点、重链顶端</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    top[u]=t;</span><br><span class="line">    id[u]=++cnt;    <span class="comment">//标记dfs序</span></span><br><span class="line">    rk[cnt]=u;    <span class="comment">//序号cnt对应节点u</span></span><br><span class="line">    <span class="keyword">if</span>(!son[u])</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">dfs2</span>(son[u],t);</span><br><span class="line"><span class="comment">/*我们选择优先进入重儿子来保证一条重链上各个节点dfs序连续，</span></span><br><span class="line"><span class="comment">一个点和它的重儿子处于同一条重链，所以重儿子所在重链的顶端还是t*/</span></span><br><span class="line">    <span class="keyword">for</span>(ll i=head[u];i;i=e[i].next)</span><br><span class="line">    &#123;</span><br><span class="line">        ll v=e[i].to;</span><br><span class="line">        <span class="keyword">if</span>(v!=son[u]&amp;&amp;v!=f[u])</span><br><span class="line">            <span class="built_in">dfs2</span>(v,v);    <span class="comment">//一个点位于轻链底端，那么它的top必然是它本身</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">pushup</span><span class="params">(ll rt)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    a[rt].sum=(a[a[rt].ls].sum+a[a[rt].rs].sum)%mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">(ll l,ll r,ll x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l==r)</span><br><span class="line">    &#123;</span><br><span class="line">        a[x].sum=v[rk[l]];</span><br><span class="line">        a[x].l=a[x].r=l;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ll mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    a[x].ls=cnt++; a[x].rs=cnt++;</span><br><span class="line">    <span class="built_in">build</span>(l,mid,a[x].ls); <span class="built_in">build</span>(mid+<span class="number">1</span>,r,a[x].rs);</span><br><span class="line">    a[x].l=a[a[x].ls].l; a[x].r=a[a[x].rs].r;</span><br><span class="line">    <span class="built_in">pushup</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">len</span><span class="params">(ll x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a[x].r-a[x].l+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">pushdown</span><span class="params">(ll x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a[x].lazy)</span><br><span class="line">    &#123;</span><br><span class="line">        ll ls=a[x].ls,rs=a[x].rs,lz=a[x].lazy;</span><br><span class="line">        (a[ls].lazy+=lz)%=mod,(a[rs].lazy+=lz)%=mod;</span><br><span class="line">        (a[ls].sum+=lz*<span class="built_in">len</span>(ls))%=mod,(a[rs].sum+=lz*<span class="built_in">len</span>(rs))%=mod;</span><br><span class="line">        a[x].lazy=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">update</span><span class="params">(ll l,ll r,ll c,ll x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a[x].l&gt;=l&amp;&amp;a[x].r&lt;=r)</span><br><span class="line">    &#123;</span><br><span class="line">        (a[x].lazy+=c)%=mod,(a[x].sum+=<span class="built_in">len</span>(x)*c)%=mod;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">pushdown</span>(x);</span><br><span class="line">    ll mid=a[x].l+a[x].r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(mid&gt;=l)</span><br><span class="line">        <span class="built_in">update</span>(l,r,c,a[x].ls);</span><br><span class="line">    <span class="keyword">if</span>(mid&lt;r)</span><br><span class="line">        <span class="built_in">update</span>(l,r,c,a[x].rs);</span><br><span class="line">    <span class="built_in">pushup</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">query</span><span class="params">(ll l,ll r,ll x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a[x].l&gt;=l&amp;&amp;a[x].r&lt;=r)</span><br><span class="line">        <span class="keyword">return</span> a[x].sum;</span><br><span class="line">    <span class="built_in">pushdown</span>(x);</span><br><span class="line">    ll mid=a[x].l+a[x].r&gt;&gt;<span class="number">1</span>,tot=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(mid&gt;=l)</span><br><span class="line">        tot+=<span class="built_in">query</span>(l,r,a[x].ls);</span><br><span class="line">    <span class="keyword">if</span>(mid&lt;r)</span><br><span class="line">        tot+=<span class="built_in">query</span>(l,r,a[x].rs);</span><br><span class="line">    <span class="keyword">return</span> tot%mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">sum</span><span class="params">(ll x,ll y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll ret=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(top[x]!=top[y]) <span class="comment">//两点不在同一条重链</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(d[top[x]]&lt;d[top[y]]) <span class="built_in">swap</span>(x,y);</span><br><span class="line">        ret+=<span class="built_in">query</span>(id[top[x]],id[x],rt);</span><br><span class="line">        ret%=mod;</span><br><span class="line">        x=f[top[x]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//循环结束，两点位于同一重链上，但两点不一定为同一点，所以我们还要统计这两点之间的贡献</span></span><br><span class="line">    <span class="keyword">if</span>(id[x]&gt;id[y]) <span class="built_in">swap</span>(x,y);</span><br><span class="line">    <span class="keyword">return</span> (ret+<span class="built_in">query</span>(id[x],id[y],rt))%mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">updates</span><span class="params">(ll x,ll y,ll c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(top[x]!=top[y])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(d[top[x]]&lt;d[top[y]]) <span class="built_in">swap</span>(x,y);</span><br><span class="line">        <span class="built_in">update</span>(id[top[x]],id[x],c,rt);</span><br><span class="line">        x=f[top[x]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(id[x]&gt;id[y]) <span class="built_in">swap</span>(x,y);</span><br><span class="line">    <span class="built_in">update</span>(id[x],id[y],c,rt);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld%lld%lld&quot;</span>,&amp;n,&amp;m,&amp;r,&amp;mod);</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;v[i]);</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        ll x,y;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;x,&amp;y);</span><br><span class="line">        <span class="built_in">add</span>(x,y),<span class="built_in">add</span>(y,x);</span><br><span class="line">    &#125;</span><br><span class="line">    cnt=<span class="number">0</span>,<span class="built_in">dfs1</span>(r,<span class="number">0</span>,<span class="number">1</span>),<span class="built_in">dfs2</span>(r,r);</span><br><span class="line">    cnt=<span class="number">0</span>,<span class="built_in">build</span>(<span class="number">1</span>,n,rt=cnt++);</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        ll op,x,y,k;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;op);</span><br><span class="line">        <span class="keyword">if</span>(op==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld%lld&quot;</span>,&amp;x,&amp;y,&amp;k);</span><br><span class="line">            <span class="built_in">updates</span>(x,y,k);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(op==<span class="number">2</span>)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;x,&amp;y);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,<span class="built_in">sum</span>(x,y));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(op==<span class="number">3</span>)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;x,&amp;y);</span><br><span class="line">            <span class="built_in">update</span>(id[x],id[x]+size[x]<span class="number">-1</span>,y,rt);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;x);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,<span class="built_in">query</span>(id[x],id[x]+size[x]<span class="number">-1</span>,rt));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="一个很不正经的后记"><a href="#一个很不正经的后记" class="headerlink" title="一个很不正经的后记"></a>一个很不正经的后记</h1><p>仔细看了大佬们的博客并很认真地整理出来，对树剖也有了更深的认识。<br>然后毛毛雨的第一篇博客大功告成啦！！<br>虽然格式排版暂时还莫得，但是毛毛雨后期会调的啦！！况且都这么晚了╭(╯^╰)╮<br>不如……晚安！(*๓´╰╯&#96;๓)♡</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/08/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/21/hdu6695/" rel="prev" title="hdu6695">
+                hdu6695 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/header.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://zzy991212.github.io/" title="zzy" target="_blank">zzy</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="blog.kongjune.com" title="KONGJUNE" target="_blank">KONGJUNE</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="www.zhouwk.club" title="zhouwk" target="_blank">zhouwk</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/conver/" title="conver" target="_blank">conver</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://vincentxwd.github.io/blog/" title="Kirai" target="_blank">Kirai</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%99%E9%87%8C%E6%98%AF%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86"><span class="nav-number">1.</span> <span class="nav-text">这里是树链剖分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="nav-number">1.2.</span> <span class="nav-text">一些基本定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E8%BF%87%E7%A8%8B"><span class="nav-number">1.3.</span> <span class="nav-text">实现过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-number">1.3.2.</span> <span class="nav-text">预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.3.</span> <span class="nav-text">操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E4%B8%80%E8%B5%B7%E6%9D%A5%E7%9C%8B%E9%A2%98%E7%9B%AE%E9%B8%AD%EF%BC%81"><span class="nav-number">2.</span> <span class="nav-text">然后一起来看题目鸭！</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E5%BE%88%E4%B8%8D%E6%AD%A3%E7%BB%8F%E7%9A%84%E5%90%8E%E8%AE%B0"><span class="nav-number">3.</span> <span class="nav-text">一个很不正经的后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">毛毛雨 =)</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
