@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="网络亮点 引入Inception结构（融合不同尺度的特征信息） 使用$1\times 1$的卷积核进行降维以及映射处理 添加两个辅助分类器帮助训练  AlexNet和VGG都只有一个输出层，而GoogLeNet有三个输出层（其中两个辅助分类层） 丢弃全连接层，使用平均池化层（大大减少模型参数）  前置技能1 * 1矩阵降维考虑channel为512的特征矩阵：  不使用1 * 1的卷积核进行降维">
+<meta name="description" content="GoogLeNet">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[bilibili乱搞]GoogLeNet">
 <meta property="og:url" content="http://maomaoyu804.github.io/2020/05/29/ilibili%E4%B9%B1%E6%90%9E-GoogLeNet/index.html">
 <meta property="og:site_name" content="毛毛雨">
-<meta property="og:description" content="网络亮点 引入Inception结构（融合不同尺度的特征信息） 使用$1\times 1$的卷积核进行降维以及映射处理 添加两个辅助分类器帮助训练  AlexNet和VGG都只有一个输出层，而GoogLeNet有三个输出层（其中两个辅助分类层） 丢弃全连接层，使用平均池化层（大大减少模型参数）  前置技能1 * 1矩阵降维考虑channel为512的特征矩阵：  不使用1 * 1的卷积核进行降维">
+<meta property="og:description" content="GoogLeNet">
 <meta property="og:locale">
 <meta property="og:image" content="http://maomaoyu804.github.io/images/pasted-15.png">
 <meta property="og:image" content="http://maomaoyu804.github.io/images/pasted-13.png">
 <meta property="og:image" content="http://maomaoyu804.github.io/images/pasted-14.png">
 <meta property="og:image" content="http://maomaoyu804.github.io/images/pasted-16.png">
 <meta property="article:published_time" content="2020-05-29T15:52:35.000Z">
-<meta property="article:modified_time" content="2020-06-18T16:39:24.000Z">
+<meta property="article:modified_time" content="2022-02-22T09:07:51.044Z">
 <meta property="article:author" content="毛毛雨 &#x3D;)">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://maomaoyu804.github.io/images/pasted-15.png">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-06-19T00:39:24+08:00">
-                2020-06-19
+              <time title="更新于" itemprop="dateModified" datetime="2022-02-22T17:07:51+08:00">
+                2022-02-22
               </time>
             
           </span>
@@ -359,7 +359,7 @@
       
 
       
-        <span id="more"></span>
+        <p>GoogLeNet<br><span id="more"></span></p>
 <h1 id="网络亮点"><a href="#网络亮点" class="headerlink" title="网络亮点"></a>网络亮点</h1><ul>
 <li>引入Inception结构（融合不同尺度的特征信息）</li>
 <li>使用$1\times 1$的卷积核进行降维以及映射处理</li>
